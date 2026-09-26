@@ -24,7 +24,13 @@ Dharini Raghavan, Amritpal Singh
 <a href="https://openreview.net/forum?id=0Eua4EkYht"><img src="https://img.shields.io/badge/Paper-OpenReview-purple"></a>
 <a href="document/DiagRare_Bench_ICLR2027.pdf"><img src="https://img.shields.io/badge/PDF-Repository-orange"></a>
 
+<<<<<<< HEAD
 # Benchmark Components
+=======
+- 🌐 Project page: https://diagrare-bench-dhariniraghavan2001-2901.vercel.app
+- 📊 Leaderboard: https://diagrare-bench-dhariniraghavan2001-2901.vercel.app/leaderboard.html
+- 🤗 Dataset: https://huggingface.co/datasets/Dharini24/DiagRare_Bench
+>>>>>>> d383e98ddcbc10f049c72232b3b4bc52a3bfb1e7
 
 - **Primary diagnostic evaluation:** 984 cases spanning **82 diseases** and **nine organ systems**. Each case contains positive findings and explicitly absent findings; rare and common targets are balanced so that prevalence alone cannot solve the task.
 - **Randomized evidence and stated-prior experiment:** a **3 x 3 factorial design** over 27 target/confounder pairs, with evidence strength and stated prevalence manipulated independently.
