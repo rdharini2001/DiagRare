@@ -1,0 +1,11 @@
+comparison,metric,p_value,significant_at_0.05
+qwen2.5-0.5b vs qwen2.5-1.5b,gamma_evidence,0.0,True
+qwen2.5-0.5b vs qwen2.5-3b,gamma_evidence,0.0,True
+qwen2.5-0.5b vs qwen2.5-7b,gamma_evidence,0.0,True
+qwen2.5-1.5b vs qwen2.5-3b,gamma_evidence,0.0,True
+qwen2.5-1.5b vs qwen2.5-7b,gamma_evidence,0.0,True
+qwen2.5-3b vs qwen2.5-7b,gamma_evidence,0.0084,True
+qwen2.5-7b before vs after LoRA [original],gamma_prior,0.0,True
+qwen2.5-7b before vs after LoRA [original],gamma_evidence,0.0032,True
+qwen2.5-7b before vs after LoRA [expanded_heldout],gamma_prior,0.0692,False
+qwen2.5-7b before vs after LoRA [expanded_heldout],gamma_evidence,0.0008,True
