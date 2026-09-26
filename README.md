@@ -15,7 +15,6 @@ The evidence coefficient is estimated from ranked differentials. We then test it
 - 🌐 Project page: https://diagrare-bench-dhariniraghavan2001-2901.vercel.app
 - 📊 Leaderboard: https://diagrare-bench-dhariniraghavan2001-2901.vercel.app/leaderboard.html
 - 🤗 Dataset: https://huggingface.co/datasets/Dharini24/DiagRare_Bench
-- 📄 Paper source: [`paper/`](paper/)
 
 ## Evaluation at a glance
 
