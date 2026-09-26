@@ -1,5 +1,0 @@
-model,dataset,source,unparsed_rate,accuracy,spliced_chat_template
-med42-8b,cupcase,chat_template,0.0,0.8576642335766423,True
-med42-8b,rarearena,chat_template,0.0,0.9851971529627528,True
-medalpaca-7b,cupcase,chat_template,0.0,0.5853453116226839,True
-medalpaca-7b,rarearena,chat_template,0.0,0.5151740098685647,True
