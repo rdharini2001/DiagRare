@@ -102,7 +102,7 @@ def main() -> None:
     if len(valid) > 2:
         r, p = pearsonr(valid.gamma_evidence_rarearena, valid.gamma_evidence_diagrare)
         rho, _ = spearmanr(valid.gamma_evidence_rarearena, valid.gamma_evidence_diagrare)
-        print(f"\n=== RareArena vs. DiagRare-X: r={r:.3f} (p={p:.4f}), rho={rho:.3f} across {len(valid)} models ===")
+        print(f"\n=== RareArena vs. DiagRare-Bench: r={r:.3f} (p={p:.4f}), rho={rho:.3f} across {len(valid)} models ===")
 
     if "gamma_evidence_cupcase" in out.columns:
         valid3 = out.dropna(subset=["gamma_evidence_rarearena", "gamma_evidence_cupcase"])

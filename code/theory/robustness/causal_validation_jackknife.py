@@ -9,7 +9,7 @@ ask for at small n, done proactively.
 
 Will be re-run once the expanded (~23-model) panel's causal-grid data
 lands, which is the real fix for the small-n concern -- this jackknife is
-the honest interim answer for the panel we have now.
+the corresponding estimate for the available model panel.
 """
 from __future__ import annotations
 

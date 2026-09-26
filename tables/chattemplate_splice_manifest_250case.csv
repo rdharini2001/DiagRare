@@ -3,14 +3,11 @@ med42-8b,baseline,chat_template,0.1006097560975609,0.7002032520325203,True
 med42-8b,causal_grid,chat_template,0.0,0.7818930041152263,True
 med42-8b,cupcase,chat_template,0.0,0.848,True
 med42-8b,rarearena,chat_template,0.0,0.996,True
-med42-8b,medqa,chat_template,0.0,0.816,True
 openbiollm-8b,baseline,chat_template,0.9989837398373984,0.0010162601626016,False
 openbiollm-8b,causal_grid,chat_template,0.0,0.8683127572016461,True
 openbiollm-8b,cupcase,chat_template,0.832,0.148,False
 openbiollm-8b,rarearena,chat_template,0.988,0.012,False
-openbiollm-8b,medqa,chat_template,0.596,0.252,False
 medalpaca-7b,baseline,chat_template,0.0071138211382113,0.024390243902439,True
 medalpaca-7b,causal_grid,chat_template,0.0,0.8600823045267489,True
 medalpaca-7b,cupcase,,,,False
 medalpaca-7b,rarearena,chat_template,0.0,0.268,True
-medalpaca-7b,medqa,chat_template,0.0,0.5,True

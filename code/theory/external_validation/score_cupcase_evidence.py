@@ -5,7 +5,7 @@ no torch/embedding model needed -- and directly justified by our OWN main-
 paper robustness finding (analysis/../theory/robustness/candidate_set_and_iia
 and per_covariate_robustness.py) that a naive lexical-overlap evidence proxy
 gives IDENTICAL model rankings (Spearman rho=1.000) to the much more
-sophisticated Bayes-oracle likelihood-ratio on DiagRare-X itself -- so a
+sophisticated Bayes-oracle likelihood-ratio on DiagRare-Bench itself -- so a
 simple, transparent, reproducible TF-IDF baseline is a well-justified choice
 here, not a corner cut. A second, embedding-based (MedCPT) version is added
 separately as a robustness check once a working torch environment is

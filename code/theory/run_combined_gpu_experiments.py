@@ -39,7 +39,7 @@ import numpy as np
 
 
 def run_baseline(llm, model_tag: str) -> pd.DataFrame:
-    """Main DiagRare-X baseline-condition inference (984 vignettes, 82-way
+    """Main DiagRare-Bench baseline-condition inference (984 vignettes, 82-way
     top-3 free-text ranking) -- needed to compute this model's accuracy and
     gamma_prior/gamma_evidence alongside the new-panel external-validation
     results. Writes in the exact schema score_predictions.py and

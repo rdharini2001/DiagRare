@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""The single most important missing experiment (per external review): a
+"""Construct the randomized evidence and stated-prior experiment: a
 factorial causal intervention grid that independently manipulates ONLY the
 stated prior and ONLY the diagnostic evidence, holding everything else fixed,
 for a clean 2-candidate forced choice (target disease vs. its nearest

@@ -10,7 +10,7 @@ gamma_prior, gamma_evidence, PER, PER_lo, PER_hi, converged.
 
 `n_used / n_total` matters: a model that mostly fails to produce a parseable
 disease name (BioMistral, Qwen2.5-0.5B) yields a PER estimated from very few
-choice occasions -- reported honestly via n_used and wide bootstrap CIs
+choice occasions -- reported through n_used and bootstrap confidence intervals
 rather than hidden.
 """
 from __future__ import annotations

@@ -121,7 +121,7 @@ def main() -> None:
             "pooled_gamma_evidence_main_paper": pooled_ge,
             "n_organs_used": int(np.sum(re["valid_mask"])) if isinstance(re["valid_mask"], np.ndarray) else 0,
         })
-        print(f"{m}: pooled(main-paper)={pooled_ge:.4f}  random-effects mu={re['mu']:.4f}  "
+        print(f"{m}: pooled={pooled_ge:.4f}  random-effects mu={re['mu']:.4f}  "
               f"tau2(between-organ)={re['tau2']:.5f}  ({int(np.sum(re['valid_mask']))} organs)")
 
     out_dir = ROOT / "results" / "theory" / "robustness"

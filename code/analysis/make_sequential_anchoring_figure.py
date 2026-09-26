@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Figure for the sequential anchoring/recovery experiment
-(theory/analyze_sequential_anchoring.py): the headline scatter (from the baseline ranking
+(theory/analyze_sequential_anchoring.py): the cross-model scatter (from the baseline ranking
 -fitted gamma_evidence vs. measured recovery_rate) plus a bar chart of
 per-model recovery rates with bootstrap 95% CIs, sorted low to high, to
 show the spread from Falcon-7B's total failure to recover (0%) up to

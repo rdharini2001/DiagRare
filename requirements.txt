@@ -7,3 +7,6 @@ statsmodels
 torch
 transformers
 vllm
+datasets
+peft
+bitsandbytes

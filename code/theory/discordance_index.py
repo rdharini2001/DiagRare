@@ -21,8 +21,8 @@ def d_acc(acc_common: float, acc_rare: float) -> float:
     return (acc_common - acc_rare) / (acc_common + acc_rare + EPS)
 
 
-def diagrare_x_discordance() -> pd.DataFrame:
-    """D_acc on DiagRare-X using its native is_rare label, for every model
+def diagrare_bench_discordance() -> pd.DataFrame:
+    """D_acc on DiagRare-Bench using its native is_rare label, for every model
     with baseline predictions -- the full expanded panel, not just the
     original 8 used in Sec 7.13's matched-pair analysis."""
     vignettes = pd.read_csv(ROOT / "data" / "expanded" / "vignettes_combined.csv")
@@ -34,7 +34,7 @@ def diagrare_x_discordance() -> pd.DataFrame:
         m["correct"] = m["prediction_1"].astype(str).str.strip() == m["target_disease"].astype(str).str.strip()
         acc_common = m.loc[~m["is_rare"], "correct"].mean()
         acc_rare = m.loc[m["is_rare"], "correct"].mean()
-        rows.append({"model": model_tag, "dataset": "DiagRare-X",
+        rows.append({"model": model_tag, "dataset": "DiagRare-Bench",
                      "acc_common": acc_common, "acc_rare": acc_rare,
                      "n_common": (~m["is_rare"]).sum(), "n_rare": m["is_rare"].sum(),
                      "D_acc": d_acc(acc_common, acc_rare)})
@@ -56,13 +56,13 @@ def real_dataset_discordance_adjusted(name: str, pred_dir: Path, data_csv: Path)
     way a report specifically documenting a rare condition does. This
     means a raw common-vs-rare accuracy gap in a case-report corpus
     conflates "harder because rare" with "harder because the write-up is
-    less evidentially clear" -- exactly the confound DiagRare-X's matched
+    less evidentially clear" -- exactly the confound DiagRare-Bench's matched
     construction (Sec 7.13) rules out by design.
 
     Fix: logistic regression of is_correct on a common-vs-rare indicator
     AND the case's own TF-IDF evidence-match strength (for the correct
     diagnosis) as a covariate. The coefficient on the rarity indicator,
-    after this adjustment, estimates the same rare/common gap DiagRare-X's
+    after this adjustment, estimates the same rare/common gap DiagRare-Bench's
     matching estimates directly -- holding evidence quality fixed instead
     of holding it fixed by construction.
     """
@@ -179,8 +179,8 @@ def main() -> None:
     rarearena_csv = "rarearena_full_with_evidence.csv" if args.full else "rarearena_with_evidence.csv"
     out_suffix = "_full" if args.full else ""
 
-    print("=== DiagRare-X Discordance (native is_rare label, full panel) ===")
-    dx = diagrare_x_discordance()
+    print("=== DiagRare-Bench Discordance (native is_rare label, full panel) ===")
+    dx = diagrare_bench_discordance()
     print(dx.sort_values("D_acc", ascending=False).to_string(index=False))
 
     print("\n=== CUPCase Discordance (PubMed-count tercile split) ===")
@@ -216,7 +216,7 @@ def main() -> None:
     out_path = out_dir / f"discordance_index{out_suffix}.csv"
     all_d.to_csv(out_path, index=False)
 
-    # cross-dataset consistency: does a model's DiagRare-X D_acc predict its
+    # cross-dataset consistency: does a model's DiagRare-Bench D_acc predict its
     # real-dataset D_acc? (analogous to the gamma_evidence cross-dataset checks)
     if len(all_d):
         pivot = all_d.pivot_table(index="model", columns="dataset", values="D_acc")

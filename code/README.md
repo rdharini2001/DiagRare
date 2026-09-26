@@ -2,14 +2,14 @@
 
 This directory contains the scripts used to construct the benchmark, run open-weight model inference, estimate evidence responsiveness, analyze the intervention experiments, and reproduce the reported robustness checks.
 
-All released evaluations use open-weight checkpoints. The same analysis code is used for general-purpose and medically specialized models.
+All evaluations in this submission use open-weight checkpoints. The same analysis code is used for general-purpose and medically specialized models.
 
 ## Main analysis
 
 - `analysis/plackett_luce.py`: Plackett-Luce estimator for ranked diagnostic outputs.
-- `analysis/fit_per_all_models.py`: fits the prior and evidence coefficients for the released model panel.
+- `analysis/fit_per_all_models.py`: fits the prior and evidence coefficients for the model panel.
 - `analysis/score_predictions.py`: computes diagnostic accuracy and ranking statistics.
-- `analysis/make_publication_figures.py`: reproduces the publication figures from released result tables.
+- `analysis/make_publication_figures.py`: reproduces the publication figures from included result tables.
 
 ## Benchmark construction
 
@@ -44,7 +44,7 @@ The scripts under `theory/robustness/` cover alternative choice likelihoods, can
 - `analysis/self_consistency_analysis.py` and `theory/robustness/self_consistency_calibration.py`: self-consistency analyses.
 - `theory/analyze_qwen3_thinking_budget.py`: Qwen3 thinking-budget analysis.
 
-## Reproducing the released figures
+## Reproducing the figures
 
 From the repository root:
 
@@ -52,4 +52,4 @@ From the repository root:
 python code/analysis/make_publication_figures.py
 ```
 
-The script reads the released result tables and writes vector figures to `figures/`.
+The script reads the included result tables and writes vector figures to `figures/`.

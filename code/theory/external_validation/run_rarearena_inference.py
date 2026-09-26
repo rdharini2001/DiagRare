@@ -2,7 +2,7 @@
 """Runs each model on the prepared RareArena external-validation subset --
 identical protocol to run_cupcase_inference.py (4-way lettered forced choice,
 shuffled per case) so the two external datasets are analyzed the same way
-and are directly comparable to each other as well as to DiagRare-X.
+and are directly comparable to each other as well as to DiagRare-Bench.
 
 Usage:
   python run_rarearena_inference.py --model Qwen/Qwen2.5-7B-Instruct \

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Does the PER HEADLINE NUMBER (not just the oracle's covariate ranking,
+"""Does the PER estimate (not just the oracle's covariate ranking,
 already checked in sensitivity_analysis.py) survive varying the oracle's 4
 fixed finding-emission probabilities? Re-fits Plackett-Luce (point estimates
 only -- no bootstrap, to keep this fast) for the released open-weight

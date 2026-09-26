@@ -1,4 +1,4 @@
-model,CUPCase,DiagRare-X,RareArena
+model,CUPCase,DiagRare-Bench,RareArena
 asclepius-7b,,0.9994722786368798,
 biomistral-7b,,0.0,
 deepseek-llm-7b,0.0285577433952971,-0.9997720519721504,0.0080365039679349

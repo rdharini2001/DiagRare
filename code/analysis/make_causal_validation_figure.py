@@ -7,7 +7,7 @@ matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 
 REPO=Path(__file__).resolve().parents[2]
-RES=REPO/'results'; OUT=REPO/'figures'; OUT.mkdir(parents=True,exist_ok=True)
+RES=REPO/'tables'; OUT=REPO/'figures'; OUT.mkdir(parents=True,exist_ok=True)
 NAVY='#173F5F'; BLUE='#2C6CB0'; TEAL='#4AA999'; GOLD='#D7A63D'; CORAL='#D96A4C'; WINE='#8A1538'; INK='#1E2937'; GRID='#D8E0E8'
 FAMILY_COL={'Qwen':BLUE,'Mistral':'#2F63B8','Phi':'#143E87','Yi':TEAL,'OLMo':'#596DD2','Falcon':GOLD,'GLM':'#3E91B7','Granite':'#7AA6C2','StableLM':CORAL,'DeepSeek':WINE,'Llama2':'#8E63A9','Llama3':'#2A9D8F','Llama':'#B08968'}
 SHORT={'qwen2.5-0.5b':'Qwen2.5-0.5B','qwen2.5-1.5b':'Qwen2.5-1.5B','qwen2.5-3b':'Qwen2.5-3B','qwen2.5-7b':'Qwen2.5-7B','mistral-7b-instruct':'Mistral-7B','phi-3.5-mini':'Phi-3.5-mini','yi-1.5-6b':'Yi-1.5-6B','yi-1.5-9b':'Yi-1.5-9B','olmo-2-7b':'OLMo-2-7B','deepseek-llm-7b':'DeepSeek-LLM-7B','falcon-7b':'Falcon-7B','stablelm-zephyr-3b':'StableLM-Zephyr-3B','granite-3.1-2b':'Granite-3.1-2B','granite-3.1-8b':'Granite-3.1-8B','zephyr-7b':'Zephyr-7B','openchat-3.5':'OpenChat-3.5','glm-4-9b':'GLM-4-9B','nous-hermes-2-7b':'Nous-Hermes-2-7B','medalpaca-7b':'MedAlpaca-7B','asclepius-7b':'Asclepius-7B','med42-8b':'Med42-8B'}
@@ -15,7 +15,7 @@ plt.rcParams.update({'font.family':'DejaVu Serif','font.size':7.6,'axes.titlesiz
 
 def main():
     d=pd.read_csv(RES/'causal_grid_analysis.csv').dropna(subset=['gamma_evidence_revealed','beta_evidence_causal']).copy()
-    meta=pd.read_csv(REPO/'data/model_metadata.csv')[['model_tag','family']]
+    meta=pd.read_csv(REPO/'data'/'metadata'/'model_metadata.csv')[['model_tag','family']]
     d=d.merge(meta,left_on='model',right_on='model_tag',how='left').sort_values('gamma_evidence_revealed').reset_index(drop=True)
     d['idx']=np.arange(1,len(d)+1)
     r,p=pearsonr(d.gamma_evidence_revealed,d.beta_evidence_causal)

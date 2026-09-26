@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""A natural experiment the expanded panel makes possible for free: four
+"""Compare several fine-tuning recipes represented in the model panel: four
 models in the panel are ALL fine-tunes of the identical Mistral-7B-v0.1/v0.3
 base checkpoint, differing only in alignment recipe:
   - mistral-7b-instruct: Mistral AI's own instruction-tuning (SFT)

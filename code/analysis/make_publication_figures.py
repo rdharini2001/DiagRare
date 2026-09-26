@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 from matplotlib.patches import Patch
 
 REPO = Path(__file__).resolve().parents[2]
-RES = REPO / 'results'
+RES = REPO / 'tables'
 OUT = REPO / 'figures'
 OUT.mkdir(parents=True, exist_ok=True)
 
@@ -43,7 +43,7 @@ def save(fig, stem):
     plt.close(fig)
 
 def family_map():
-    p=REPO / 'data' / 'model_metadata.csv'
+    p=REPO / 'data' / 'metadata' / 'model_metadata.csv'
     m=pd.read_csv(p)
     return dict(zip(m.model_tag,m.family))
 

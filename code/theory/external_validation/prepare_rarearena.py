@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Prepares a RareArena (THUMedInfo/RareArena, real de-identified rare-disease
 case reports linked to Orphanet diagnoses) subset for a SECOND, independent
-external validation of the DiagRare-X Plackett-Luce framework -- a deliberate
+external validation of the DiagRare-Bench Plackett-Luce framework -- a deliberate
 complement to CUPCase (prepare_cupcase.py), not a duplicate of it.
 
 The two external datasets differ in a methodologically useful way:

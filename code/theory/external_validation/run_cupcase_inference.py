@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Runs each model on the prepared CUPCase external-validation subset: a
 4-way forced choice (correct diagnosis + 3 real hard-negative distractors,
-all authored independently of DiagRare-X) per case. Candidates are shuffled
+all authored independently of DiagRare-Bench) per case. Candidates are shuffled
 per case and presented as lettered options (A-D) since candidate texts can
 be full sentences, making a letter-based answer far more reliably parseable
 than asking the model to reproduce the exact text.

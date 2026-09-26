@@ -1,8 +1,6 @@
 __pycache__/
-*.pyc
+*.py[cod]
 .venv/
-.env
-*.log
+venv/
 .DS_Store
-outputs/
-checkpoints/
+figures/

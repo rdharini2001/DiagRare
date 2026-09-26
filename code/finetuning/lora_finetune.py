@@ -1,15 +1,10 @@
 #!/usr/bin/env python3
-"""QLoRA fine-tune a small instruct model on the debiasing SFT set.
-
-Deliberately tiny (72 examples, few epochs) to fit the "small/fast"
-compute budget -- this is a pilot debiasing intervention, evaluated
-for generalization to unseen diseases/organ systems, not a claim of a
-fully-tuned production model.
+"""QLoRA fine-tuning used in the adaptation experiment.
 
 Usage:
-  python lora_finetune.py --model Qwen/Qwen2.5-7B-Instruct \
-      --data ../data/expanded/debias_sft.jsonl \
-      --out_dir /storage/scratch1/1/draghavan7/diagrare_checkpoints/qwen2.5-7b-debias-lora
+  python code/finetuning/lora_finetune.py --model Qwen/Qwen2.5-7B-Instruct \
+      --data data/finetuning/debias_sft.jsonl \
+      --out_dir outputs/qwen2.5-7b-debias-lora
 """
 from __future__ import annotations
 
@@ -64,10 +59,7 @@ def main() -> None:
     ds = Dataset.from_list(raw).map(to_text)
 
     def tokenize(ex):
-        # No fixed max_length padding here -- that forced every one of the 72
-        # examples to the full max_len regardless of actual length, which is
-        # what OOM'd a 7B 4-bit model on a 24GB GPU. The data collator below
-        # pads dynamically to the longest sequence IN EACH BATCH instead.
+        # Use dynamic batch padding rather than padding every example to max_len.
         out = tokenizer(ex["text"], truncation=True, max_length=args.max_len)
         out["labels"] = out["input_ids"].copy()
         return out

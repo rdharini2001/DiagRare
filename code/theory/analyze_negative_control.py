@@ -55,7 +55,7 @@ def main() -> None:
             "gamma_evidence -- evidence-elastic models are selectively responsive to REAL "
             "evidence (Sec 6.2), not simply more reactive to any text change (this check)."
             if r <= 0.3 else
-            "flip rate correlates POSITIVELY with gamma_evidence -- reported honestly as a "
+            "flip rate correlates positively with gamma_evidence; this is treated as a "
             "genuine caveat: some of what looks like evidence-elasticity may include general "
             "sensitivity to added text, not only to diagnostically relevant content."
         ))

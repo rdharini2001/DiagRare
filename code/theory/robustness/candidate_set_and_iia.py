@@ -7,7 +7,7 @@ odds between two leading candidates shouldn't change just because irrelevant
 alternatives are added or removed. We test this directly rather than waiting
 
 1. Refit on THREE candidate-set definitions per vignette:
-   (a) full 82-disease list (what models actually saw -- the main-paper number)
+   (a) full 82-disease list used in the primary evaluation
    (b) same-organ-system diseases only (a smaller, more clinically realistic
        "differential" -- removes obviously-irrelevant alternatives)
    (c) a "hard-negative" set: same-organ-system diseases + the single globally

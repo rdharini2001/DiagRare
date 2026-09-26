@@ -62,31 +62,10 @@ def main() -> None:
         for cand in candidate_sets[v["vignette_id"]]:
             requests.append((v["vignette_id"], cand, base_prompt, cand))
 
-    # enable_prefix_caching=True hangs indefinitely on this cluster's GPUs: it
-    # forces vLLM's V1 engine, which is incompatible with the XFORMERS backend
-    # this project requires for Turing-generation GPUs (confirmed via a
-    # dedicated-node test -- V1+XFORMERS logs "falling back to V0" and then
-    # hangs). Without it, each candidate's shared prompt prefix is simply
-    # recomputed per request instead of cached across the ~11 candidates per
-    # vignette -- slower, but small enough here (~11k short requests total)
-    # to be a non-issue.
-    # max_num_seqs caps how many sequences vLLM schedules CONCURRENTLY,
-    # independent of how many requests are handed to one generate() call --
-    # the CHUNK-based batching below does NOT bound this. qwen2.5-7b OOM'd
-    # identically at CHUNK=500 and CHUNK=150 (same byte-for-byte allocation
-    # failure), which only makes sense if vLLM's scheduler was packing far
-    # more concurrent sequences than either chunk size in each case; each
-    # sequence with prompt_logprobs=0 buffers a logprob record per PROMPT
-    # token (~500-700 tokens here), so concurrency, not request count, is
-    # what blew up memory.
-    # enforce_eager=True: CUDA-graph capture (35 shapes x LM-head-sized logit
-    # buffers) turned out to be the actual memory hog for large-vocab models
-    # (Qwen's 152k vocab vs Mistral's 32k) -- vLLM's own profiling report
-    # only showed ~0.07-0.16GiB for "CUDAGraph memory," but the real captured
-    # graphs pin far more than that for a 152k-wide LM head, which is
-    # invisible to the profiler step but consistently OOM'd the qwen family
-    # (not mistral/phi) at the identical ~2.13GiB allocation regardless of
-    # CHUNK size -- eager mode skips graph capture entirely.
+    # Prefix caching is disabled because the tested vLLM/XFORMERS configuration
+    # was unstable on the evaluation GPUs. Eager execution avoids CUDA-graph
+    # memory growth for large-vocabulary checkpoints, and max_num_seqs bounds
+    # concurrent prompt-logprob requests.
     llm = LLM(model=args.model, max_model_len=args.max_model_len,
               gpu_memory_utilization=args.gpu_memory_utilization, enable_prefix_caching=False,
               max_num_seqs=32, trust_remote_code=True, enforce_eager=True)
@@ -96,22 +75,9 @@ def main() -> None:
     full_texts = [p + c for _, _, p, c in requests]
     prompt_ntoks_cache: dict[str, int] = {}
 
-    # Requesting prompt_logprobs=0 makes vLLM buffer a logprob object for EVERY
-    # prompt token of EVERY in-flight request -- with ~11k requests submitted
-    # at once this OOM'd even a 24GB GPU. Chunk the requests so peak memory is
-    # bounded regardless of total count or which GPU this lands on.
-    # CHUNK=150 was tuned on a 44GB L40S with Mistral's ~32k vocab. RTX6000
-    # has only 23.46GB, AND the real driver of the OOM turned out to be
-    # VOCAB SIZE, not GPU size: get_logprobs materializes a
-    # (chunk_tokens x vocab_size) tensor internally regardless of how few
-    # logprobs are actually requested per token (prompt_logprobs=0). At
-    # gpu_memory_utilization=0.65/CHUNK=60, mistral-7b-instruct (32k vocab)
-    # and phi-3.5-mini succeed, but qwen2.5-1.5b/3b/7b (152k vocab, ~4.7x
-    # larger) OOM'd identically regardless of CHUNK/max_num_seqs tuning --
-    # confirming the failure scales with vocab_size, not batch size alone.
-    # Scale CHUNK down by vocab size (calibrated against the 60-worked-at-32k
-    # data point) so every model family gets a comparable, safe memory
-    # footprint instead of the same fixed constant.
+    # Prompt-logprob scoring materializes vocabulary-sized tensors for in-flight
+    # requests. Scale the request chunk size inversely with vocabulary size to
+    # keep peak memory comparable across model families.
     vocab_size = len(tok)
     CHUNK = args.chunk if args.chunk is not None else max(8, int(60 * 32000 / vocab_size))
     print(f"vocab_size={vocab_size} -> CHUNK={CHUNK}", flush=True)

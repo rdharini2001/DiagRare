@@ -150,9 +150,9 @@ if __name__ == "__main__":
 
 
 def fig2b_causal_validation():
-    """decisive result: revealed-preference gamma_evidence predicts
+    """Cross-model validation: baseline gamma_evidence predicts
     experimentally-manipulated behavioral sensitivity on an unrelated task.
-    Uses every model with a valid fit on both axes (expanded panel, not
+    Uses every model with a valid fit on both axes (rather than
     just the original 8) -- numbered markers + side legend, same scheme as
     fig1, since direct text labels collide badly at this n."""
     d = pd.read_csv(ROOT / "results" / "theory" / "causal_grid_analysis.csv")

@@ -1,17 +1,17 @@
 #!/usr/bin/env python3
 """Prepares a CUPCase (Perets et al., AAAI 2025 -- real case reports from BMC,
 formulated as 4-way MCQ with hard-negative distractors) subset for external
-validation of the DiagRare-X Plackett-Luce framework.
+validation of the DiagRare-Bench Plackett-Luce framework.
 
 This is the "genuinely external, independently-sourced" test the analysis needs:
-DiagRare-X's ontology and generator are OUR contribution; CUPCase's cases,
+DiagRare-Bench uses its own ontology and generator; CUPCase's cases,
 diagnoses, and distractors were authored by someone else entirely, from real
 clinical literature, with no knowledge of our benchmark.
 
 Prior axis: log(PubMed article count) for each candidate diagnosis name,
-fetched via the NCBI E-utilities API -- a REAL, externally-sourced proxy for
+fetched via the NCBI E-utilities API as an externally sourced proxy for
 "how well-known/common this diagnosis is" that has nothing to do with any
-prevalence number we assigned ourselves in DiagRare-X.
+prevalence metadata used in DiagRare-Bench.
 
 Evidence axis: computed separately in score_cupcase_evidence.py once a
 working torch/embedding environment is available (this script only prepares

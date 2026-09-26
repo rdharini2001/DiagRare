@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Figure for the causal response surface (theory/causal_response_surface.py):
 a 3x3 evidence x prior heatmap of Pr(target) for a few representative
-models, plus the headline population-level scatter (baseline
+models, plus the cross-model scatter (baseline
 gamma_evidence vs. measured causal Delta_E). Same style conventions as
 analysis/make_theory_figures.py (see that file's module docstring for the
 palette rationale)."""

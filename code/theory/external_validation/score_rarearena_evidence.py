@@ -55,7 +55,7 @@ def main() -> None:
           f"{frac_correct_highest:.1%} (well above the 25% random baseline, so the evidence "
           f"axis carries real signal here too -- though notably LOWER than CUPCase's 55.6%, "
           f"likely because RareArena's much longer case_report+test_results narratives dilute "
-          f"the diagnosis-name match; reported honestly rather than the naive prediction that "
+          f"the diagnosis-name match; this is reported directly rather than assuming that "
           f"random distractors would be lexically easier than CUPCase's curated hard negatives)")
     print(f"\nWrote {out_path}")
 

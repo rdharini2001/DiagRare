@@ -1,17 +1,17 @@
 #!/usr/bin/env python3
 """Fits the SAME Plackett-Luce-style discrete-choice decomposition used
 throughout the main paper, but on CUPCase -- a real, independently-authored
-external dataset with no relationship to DiagRare-X. This is the analysis
+external dataset with no relationship to DiagRare-Bench. This is the analysis
 external-validity test: does gamma_evidence's model ranking (and its
 correlation with accuracy) survive on data we did not design?
 
 Prior axis: log(PubMed article count + 1) for each candidate -- a real,
-externally-sourced signal, independent of anything in DiagRare-X.
+externally-sourced signal, independent of anything in DiagRare-Bench.
 Evidence axis: TF-IDF cosine similarity between the case presentation and
 each candidate's text (score_cupcase_evidence.py) -- deliberately the same
 kind of simple, transparent lexical-overlap proxy that our own robustness
 check (theory/robustness/per_covariate_robustness.py) already showed gives
-IDENTICAL model rankings to a much more sophisticated oracle on DiagRare-X
+IDENTICAL model rankings to a much more sophisticated oracle on DiagRare-Bench
 itself, so using it here is principled, not a shortcut.
 
 Since each case has EXACTLY 4 candidates (no variable-N ranking machinery
@@ -107,7 +107,7 @@ def main() -> None:
         r_matched, p_matched = pearsonr(valid.gamma_evidence_cupcase, valid.gamma_evidence_diagrare)
         rho_matched, _ = spearmanr(valid.gamma_evidence_cupcase, valid.gamma_evidence_diagrare)
         r_cross, p_cross = pearsonr(valid.gamma_prior_cupcase, valid.gamma_evidence_diagrare)
-        print(f"\n=== CROSS-DATASET VALIDATION (DiagRare-X gamma_evidence vs. CUPCase gamma_evidence) ===")
+        print(f"\n=== CROSS-DATASET VALIDATION (DiagRare-Bench gamma_evidence vs. CUPCase gamma_evidence) ===")
         print(f"Pearson r={r_matched:.3f} (p={p_matched:.4f}), Spearman rho={rho_matched:.3f} across {len(valid)} models")
         print(f"(cross check: gamma_prior_cupcase vs gamma_evidence_diagrare: r={r_cross:.3f}, should be weaker)")
 
