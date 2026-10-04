@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "If you use DiagRare-Bench, please cite this work."
+title: "DiagRare-Bench: Separating Disease Priors from Patient Evidence in Language Models for Clinical Diagnosis"
+type: article
+authors:
+  - family-names: Raghavan
+    given-names: Dharini
+  - family-names: Singh
+    given-names: Amritpal
+year: 2026
+url: "https://openreview.net/forum?id=0Eua4EkYht"
+repository-code: "https://github.com/rdharini2001/DiagRare"

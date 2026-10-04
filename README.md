@@ -1,90 +1,68 @@
-<p align="center">
-  <img src="document/figures/fig3_randomized_response.png" alt="DiagRare-Bench randomized evidence and stated-prior experiment" width="100%">
-</p>
-
-<a href="https://openreview.net/forum?id=0Eua4EkYht"><img src="https://img.shields.io/badge/Paper-OpenReview-8A2BE2"></a>
-<a href="https://huggingface.co/datasets/Dharini24/DiagRare_Bench"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Dataset-yellow"></a>
-<a href="https://diagrare-bench-dhariniraghavan2001-2901.vercel.app"><img src="https://img.shields.io/badge/Project-Page-0E7C6B"></a>
-<a href="https://diagrare-bench-dhariniraghavan2001-2901.vercel.app/leaderboard.html"><img src="https://img.shields.io/badge/Interactive-Leaderboard-2C6CB0"></a>
-
 # DiagRare-Bench
 
-**DiagRare-Bench** studies a specific question in clinical diagnosis: **when patient evidence changes, how much does a language model change its diagnostic ranking?**
+**Separating Disease Priors from Patient Evidence in Language Models for Clinical Diagnosis**
 
-The benchmark separates a disease-prior feature from a case-specific evidence feature in ranked diagnostic outputs using a two-feature Plackett-Luce model. The fitted evidence coefficient, $\gamma_{\mathrm{evidence}}$, measures how strongly fitted pairwise diagnostic log odds change with an evidence contrast when the prior contrast is held fixed. The coefficient is then tested against independent case-report datasets, randomized evidence changes, and sequential diagnostic revision.
+Dharini Raghavan · Amritpal Singh
 
-> [!NOTE]
-> Evidence responsiveness is an output-level, protocol-relative description of diagnostic decision behavior. It is **not** a clinical safety score and is not a claim about the model's internal causal mechanism.
+[Paper](https://openreview.net/forum?id=0Eua4EkYht) · [Dataset](https://huggingface.co/datasets/Dharini24/DiagRare_Bench) · [Project page](https://diagrare-bench-dhariniraghavan2001-2901.vercel.app) · [Leaderboard](https://diagrare-bench-dhariniraghavan2001-2901.vercel.app/leaderboard.html)
 
-# Paper
+DiagRare-Bench measures how strongly a model's diagnostic ranking changes with patient evidence after a disease-prior feature is accounted for. The evaluation is designed to complement diagnostic accuracy: two models can reach similar accuracy while responding differently when the evidence itself changes.
 
-**DiagRare-Bench: Separating Disease Priors from Patient Evidence in Language Models for Clinical Diagnosis**  
-Dharini Raghavan, Amritpal Singh  
-*ICLR 2027 Conference Submission*  
-<a href="https://openreview.net/forum?id=0Eua4EkYht"><img src="https://img.shields.io/badge/Paper-OpenReview-purple"></a>
-<a href="document/DiagRare_Bench_ICLR2027.pdf"><img src="https://img.shields.io/badge/PDF-Repository-orange"></a>
-
-# Benchmark Components
-
-- **Primary diagnostic evaluation:** 984 cases spanning **82 diseases** and **nine organ systems**. Each case contains positive findings and explicitly absent findings; rare and common targets are balanced so that prevalence alone cannot solve the task.
-- **Randomized evidence and stated-prior experiment:** a **3 x 3 factorial design** over 27 target/confounder pairs, with evidence strength and stated prevalence manipulated independently.
-- **Sequential diagnostic revision:** 82 target/confounder pairs presented in opposite evidence orders to measure recovery after an initial competing diagnosis and final-step order dependence.
-- **Negative control and robustness suite:** irrelevant-text perturbations, alternative choice likelihoods, prevalence representations, candidate sets, evidence-score parameterizations, clustered uncertainty, and model-family-adjusted analyses.
-- **Model panel:** 25 open-weight checkpoints, including both general-purpose and medically specialized models, evaluated under the same diagnostic protocol.
-
-<p align="center">
-  <img src="document/figures/fig1_accuracy.png" alt="Evidence responsiveness and top-1 diagnostic accuracy" width="95%">
-</p>
-
-# Main Findings
-
-1. **Diagnostic accuracy:** across the 21 checkpoints with identifiable baseline estimates, evidence responsiveness is associated with top-1 accuracy ($r=0.843$). This same-case association is descriptive, not the primary validation.
-2. **External transfer:** the cross-model ordering transfers to all 3,562 CUPCase reports ($r=0.662$) and all 22,901 RareArena cases ($r=0.790$) under a different evidence representation.
-3. **Randomized evidence:** baseline $\gamma_{\mathrm{evidence}}$ predicts the finite-difference effect of stronger assigned evidence ($r=0.689$, $p=5.5\times10^{-4}$). The related ordinal intervention coefficient gives $r=0.826$ ($p=4.0\times10^{-6}$).
-4. **Sequential revision:** baseline $\gamma_{\mathrm{evidence}}$ predicts recovery after an initial competing diagnosis ($r=0.860$, $p=9.8\times10^{-6}$, $n=17$).
-5. **Prior-side asymmetry:** the prior coefficient is retained as a conditioning coordinate; it is not interpreted as a separately validated index of prevalence bias.
-
-<p align="center">
-  <img src="document/figures/fig2_randomized_validation.png" alt="Randomized evidence validates the rank-derived coefficient" width="92%">
-</p>
-
-<p align="center">
-  <img src="document/figures/fig4_sequential_revision.png" alt="Evidence responsiveness predicts sequential diagnostic revision" width="100%">
-</p>
-
-# Download Data
-
-The benchmark-owned dataset is hosted on Hugging Face:
-
-- **Dataset:** https://huggingface.co/datasets/Dharini24/DiagRare_Bench
-- **Code:** https://github.com/rdharini2001/DiagRare
-- **Project page:** https://diagrare-bench-dhariniraghavan2001-2901.vercel.app
-- **Leaderboard:** https://diagrare-bench-dhariniraghavan2001-2901.vercel.app/leaderboard.html
-
-```bash
-pip install -U "huggingface_hub>=0.34"
-hf download Dharini24/DiagRare_Bench --repo-type dataset --local-dir ./DiagRare_Bench
-```
-
-# Repository Structure
+## What is released
 
 ```text
-DiagRare/
-├── code/                 # benchmark construction, inference, estimation, interventions, robustness
-├── data/                 # benchmark-owned structured/intervention/metadata/fine-tuning data
-├── tables/               # machine-readable analysis tables used in the paper
-├── document/
-│   ├── DiagRare_Bench_ICLR2027.pdf
-│   ├── supplementary.pdf
-│   └── figures/          # main-paper and supplementary figures
-├── site/                 # static project page + interactive leaderboard
+.
+├── code/           # benchmark construction, inference, estimation, robustness, interventions
+├── data/           # benchmark-owned structured, intervention, metadata, and adaptation data
+├── tables/         # machine-readable result tables used in the paper
+├── figures/        # publication SVGs
+├── leaderboard/    # static interactive model table + leaderboard.csv
+├── site/           # project page, deployable as a static site
+├── paper/          # public preprint PDF
 ├── requirements.txt
 ├── CITATION.cff
 ├── NOTICE.md
 └── LICENSE
 ```
 
-# Reproducing the Publication Figures
+## Benchmark at a glance
+
+- 984 primary diagnostic cases covering 82 diseases and nine organ systems.
+- 25 open-weight checkpoints spanning general-purpose and medically specialized models.
+- A randomized 3 × 3 evidence/stated-prevalence experiment over 27 disease pairs.
+- A sequential diagnostic-revision task over 82 disease pairs.
+- Transfer analyses on CUPCase and RareArena using a different evidence representation.
+
+## Install
+
+```bash
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+```
+
+GPU inference scripts use `vllm`, `torch`, and `transformers`; analysis-only workflows can be run with the NumPy/pandas/SciPy/Matplotlib/Statsmodels subset of the requirements.
+
+## Core analysis
+
+The primary model is
+
+```text
+U_m(d, x) = gamma_prior * p(d) + gamma_evidence * e(d, x)
+```
+
+where `p(d)` is the released disease-prior feature and `e(d, x)` is case-specific evidence. The fitted `gamma_evidence` is interpreted comparatively under a fixed evaluation protocol.
+
+Key scripts:
+
+- `code/analysis/plackett_luce.py` — Plackett-Luce estimator.
+- `code/analysis/fit_per_all_models.py` — primary coefficient estimation.
+- `code/analysis/score_predictions.py` — diagnostic accuracy and ranking statistics.
+- `code/theory/analyze_causal_grid.py` — randomized intervention analysis.
+- `code/theory/analyze_sequential_anchoring.py` — sequential recovery and order dependence.
+- `code/analysis/make_publication_figures.py` — publication figures from released result tables.
+
+## Reproduce figures
 
 From the repository root:
 
@@ -92,17 +70,23 @@ From the repository root:
 python code/analysis/make_publication_figures.py
 ```
 
-The script reads the included result tables and writes generated figures to `figures/`. The package also includes the exact main-paper figures under `document/figures/` for reference.
+Generated figures are written to `figures/`.
 
-# External Case Reports
+## Data
 
-The paper evaluates all **3,562 CUPCase** reports and all **22,901 RareArena** cases. These datasets retain their original licenses and attribution and are not redistributed in this repository. The release contains the preparation/analysis code and the paper reports transfer through cross-model correlations because the external evidence representation differs from the primary structured representation.
+The benchmark-owned data are also published as a Hugging Face dataset: `https://huggingface.co/datasets/Dharini24/DiagRare_Bench`. The repository copy under `data/` is included so the analysis scripts can run from a single checkout.
 
-# Intended Use and Limitations
+CUPCase and RareArena are external datasets and are not redistributed. The repository includes preparation and analysis code for those evaluations; obtain the source datasets from their original repositories and follow their original licenses.
 
-DiagRare-Bench is intended for research on language-model behavior in clinical diagnosis. The primary cases use a fixed disease vocabulary and simplified disease-finding relations so that prior and evidence can be represented separately. External lexical evidence features are proxies rather than calibrated clinical likelihoods. The benchmark does not establish that any model is safe or reliable for patient care.
+## Leaderboard
 
-# Citation
+`leaderboard/leaderboard.csv` is generated from the released result tables. `leaderboard/index.html` is a static interactive view with search, filtering, sorting, upstream model links, and no imputation of missing analysis-specific estimates.
+
+## Scope
+
+DiagRare-Bench is a research benchmark for diagnostic model behavior. It does not evaluate clinical safety or establish that any checkpoint is suitable for patient care. Evidence responsiveness is protocol-dependent and should be reported alongside conventional diagnostic performance rather than treated as a deployment score.
+
+## Citation
 
 ```bibtex
 @misc{raghavan2026diagrarebench,

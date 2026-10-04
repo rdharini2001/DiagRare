@@ -1,0 +1,12 @@
+numpy
+pandas
+scipy
+matplotlib
+scikit-learn
+statsmodels
+torch
+transformers
+vllm
+datasets
+peft
+bitsandbytes
