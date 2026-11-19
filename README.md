@@ -4,7 +4,6 @@
   <a href="https://huggingface.co/spaces/Dharini24/DiagRare-Leaderboard"><img alt="Leaderboard" src="https://img.shields.io/badge/Leaderboard-Hugging%20Face%20Space-ffb000?style=for-the-badge&logo=huggingface&logoColor=white"></a>
   <a href="https://huggingface.co/datasets/Dharini24/DiagRare_Bench"><img alt="Dataset" src="https://img.shields.io/badge/Dataset-Hugging%20Face-2a78d6?style=for-the-badge&logo=huggingface&logoColor=white"></a>
   <a href="https://openreview.net/forum?id=0Eua4EkYht"><img alt="Paper on OpenReview" src="https://img.shields.io/badge/Paper-OpenReview-8c1b13?style=for-the-badge"></a>
-  <a href="https://diagrare-bench-dhariniraghavan2001-2901.vercel.app"><img alt="Project page" src="https://img.shields.io/badge/Project-Page-1baf7a?style=for-the-badge"></a>
 </p>
 
 <p align="center">
