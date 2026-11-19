@@ -1,0 +1,2 @@
+test,n_models,spearman,spearman_gamma_prior,n_disease_pairs,note
+age sensitivity (P(paediatric|child) - P(paediatric|adult)) vs 82-way accuracy,19,0.8006149213020546,0.19490788899120826,57,"inclusion: >=90% parsed age outputs, 82-way accuracy >=5%, >=50% usable baseline outputs; see p1_p2_incremental_value.csv for the held-out increment of gamma_prior (no gain)"

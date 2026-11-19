@@ -1,0 +1,17 @@
+suite,test,spearman,perm_p,n_models
+clin_ddxplus,gamma_e vs accuracy (same benchmark),0.8928571428571429,0.012198780121987801,7
+clin_ddxplus,gamma_e vs agreement with expert top-1,0.9285714285714288,0.0064993500649935,7
+clin_ddxplus,accuracy vs agreement with expert top-1,0.9642857142857145,0.0036996300369963003,7
+clin_ddxplus,gamma_p vs prior-favouring error excess,0.07142857142857144,0.9057094290570943,7
+clin_ddxplus,accuracy vs prior-favouring error excess,0.5,0.26647335266473354,7
+clin_ddxplus,gamma_e (here) vs gamma_e (82-way synthetic),0.4642857142857144,0.29687031296870314,7
+clin_ddxplus,accuracy (here) vs accuracy (82-way synthetic),0.6666937223947137,0.11438856114388561,7
+clin_ddxplus,gamma_p (here) vs gamma_p (82-way synthetic),0.21428571428571433,0.6603339666033397,7
+clin_orphanet,gamma_e vs accuracy (same benchmark),0.9166666666666666,0.0010998900109989002,9
+clin_orphanet,gamma_e vs agreement with expert top-1,0.9166666666666666,0.0017998200179982,9
+clin_orphanet,accuracy vs agreement with expert top-1,1.0,0.00019998000199980003,9
+clin_orphanet,gamma_p vs prior-favouring error excess,0.8499999999999999,0.0059994000599940004,9
+clin_orphanet,accuracy vs prior-favouring error excess,-0.3,0.44025597440255976,9
+clin_orphanet,gamma_e (here) vs gamma_e (82-way synthetic),0.8833333333333333,0.0022997700229977,9
+clin_orphanet,accuracy (here) vs accuracy (82-way synthetic),0.8833333333333333,0.0037996200379962005,9
+clin_orphanet,gamma_p (here) vs gamma_p (82-way synthetic),0.6666666666666667,0.05419458054194581,9

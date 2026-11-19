@@ -1,0 +1,6 @@
+metric,mistral_7b_instruct,nous_hermes_2_7b,difference,ci95_lo,ci95_hi,ci_method
+gamma_prior,0.1123005202398581,0.015593628130351,0.0967068921095071,0.0597766442716982,0.1379931565109682,"cluster bootstrap over the 82 target diseases (12 vignettes each); both models on the same 984 vignettes, original-paper outputs"
+gamma_evidence,0.3247900050743095,0.3083306228290411,0.0164593822452684,-0.0021728884383218,0.0365804458023305,"cluster bootstrap over the 82 target diseases (12 vignettes each); both models on the same 984 vignettes, original-paper outputs"
+top-1 accuracy,0.6239837398373984,0.6239837398373984,0.0,-0.0528455284552845,0.0538617886178861,"cluster bootstrap over the 82 target diseases (12 vignettes each); both models on the same 984 vignettes, original-paper outputs"
+"top-1 accuracy, rare targets",0.5614035087719298,0.6008771929824561,-0.0394736842105263,-0.0964937200956938,0.0196158354646205,"cluster bootstrap over the 82 target diseases (12 vignettes each); both models on the same 984 vignettes, original-paper outputs"
+top-3 accuracy,0.8058943089430894,0.8597560975609756,-0.0538617886178861,-0.0924796747967479,-0.0213414634146341,"cluster bootstrap over the 82 target diseases (12 vignettes each); both models on the same 984 vignettes, original-paper outputs"

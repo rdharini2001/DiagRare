@@ -1,22 +1,18 @@
 #!/usr/bin/env python3
 """The 984 vignettes are not 984 independent clinical concepts: there are 12
-vignettes per disease, and diseases share organ systems. The main-paper
-bootstrap (analysis/plackett_luce.bootstrap_ci) resamples VIGNETTES, silently
-treating them as independent. This re-estimates uncertainty three more
-conservative ways:
+vignettes per disease, and diseases share organ systems. This script checks uncertainty using three grouping choices:
 
   1. Disease-cluster bootstrap: resample DISEASES with replacement, keep all
-     ~12 vignettes for each resampled disease intact (respects the true
-     clustering).
+     ~12 vignettes for each resampled disease intact.
   2. Leave-one-disease-out jackknife: refit with each disease held out in
      turn; a coefficient driven by a handful of unusual diseases will show
      high jackknife variance even if the (wrong) vignette-level bootstrap
      looked tight.
   3. Organ-system cluster bootstrap: resample ORGAN SYSTEMS with replacement
-     (the coarsest, most conservative clustering available here).
+     (the coarsest grouping considered here).
 
 If significance survives disease- and organ-level resampling, not just
-vignette-level, that is a much stronger claim.
+vignette-level, that provides an additional uncertainty check.
 """
 from __future__ import annotations
 

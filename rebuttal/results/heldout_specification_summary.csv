@@ -1,0 +1,5 @@
+specification,mean_heldout_nll,improvement_vs_linear,converged_fits,total_fits
+linear,9.546072170686292,0.0,18,18
+quadratic_interaction,9.520711040122965,0.025361130563328043,18,18
+organ_nuisance,9.018768189811569,0.5273039808747222,18,18
+disease_nuisance,8.315453388022927,1.2306187826633648,18,18

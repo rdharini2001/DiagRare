@@ -1,8 +1,6 @@
 #!/usr/bin/env python3
-"""Construct the randomized evidence and stated-prior experiment: a
-factorial causal intervention grid that independently manipulates ONLY the
-stated prior and ONLY the diagnostic evidence, holding everything else fixed,
-for a clean 2-candidate forced choice (target disease vs. its nearest
+"""Construct a randomized evidence and stated-prior experiment that separately varies stated prevalence and
+target-supportive findings in a two-candidate choice (target disease vs. its nearest
 same-organ-system confounder).
 
 Design (3x3, ~27 disease pairs = 243 combinations):
@@ -12,19 +10,17 @@ Design (3x3, ~27 disease pairs = 243 combinations):
   - Prior axis (target-rare/equal/target-common): an EXPLICIT NUMERIC
     prevalence statement for both diseases in the prompt, deliberately
     decoupled from real epidemiology (can be the reverse of a disease's true
-    rarity) -- so any effect is attributable to the model updating on the
-    STATED number, not recalling memorized real-world prevalence.
+    rarity) -- to isolate the response to the stated prevalence condition.
 
-Each combination is one prompt with EXACTLY 2 valid answers, making parsing
-trivial and the outcome a clean binary (chose target vs. chose confounder).
+Each combination asks for one of two diagnoses, giving a binary outcome (chose target vs. chose confounder).
 
 The critical downstream test (done after inference, in
-analyze_causal_grid.py): does each model's ALREADY-FITTED gamma_prior (from
+analyze_causal_grid.py): does each model's baseline gamma_prior (from
 the observational Plackett-Luce fit on free-text baseline predictions)
-predict that SAME model's empirically measured sensitivity to this
+predict that same model's empirically measured sensitivity to this
 experimental prior manipulation? Does gamma_evidence predict sensitivity to
-the evidence manipulation? That is a behaviorally-validated claim, not just
-a correlational one.
+the evidence manipulation? The test compares the baseline coefficients with measured changes
+in model choices.
 """
 from __future__ import annotations
 

@@ -1,0 +1,238 @@
+disease,finding,original_relation,issue_class,reviewer_rationale,rationale_source,rationale_term_found_in_source,flag_origin,hpo_signal,hpo_max_frequency
+Acute_MI,ST_elevation,required,required_overstated,MI without ST elevation (NSTEMI) is a recognised MI category; ST elevation characterises STEMI only,thygesen2018,False,reviewer,none,
+Acute_MI,chest_pain,required,required_overstated,"A substantial minority of MI patients present without chest pain (more often older adults, women, diabetes)",canto2012,True,reviewer,none,
+Acute_MI,radiation_to_arm,required,required_overstated,Radiation to the arm is a typical but non-universal feature,gulati2021,False,reviewer,none,
+Acute_MI,fever,excluding,exclusion_overstated,Low-grade fever can follow myocardial necrosis; weakly discriminating rather than excluding,thygesen2018,False,reviewer,none,
+Acute_MI,orthopnea,excluding,exclusion_overstated,Acute heart failure can complicate MI at presentation,thygesen2018,True,reviewer,none,
+Acute_MI,peripheral_edema,excluding,exclusion_overstated,Heart failure/comorbid edema may coexist with MI,thygesen2018,True,reviewer,none,
+Addison_Disease,hyperpigmentation,required,subtype_dependent,"Hyperpigmentation arises from ACTH excess in primary, not secondary, adrenal insufficiency",bornstein2016,True,reviewer,hpo_very_frequent_ge80pct,0.9
+Addison_Disease,hyponatremia,required,required_overstated,HPO disease-phenotype annotation gives frequency 0.55 (category midpoint or reported ratio); not independently clinician-reviewed,HPO,,HPO_only,hpo_lt80pct,0.55
+Allergic_Rhinitis,itching,required,required_overstated,ARIA defines AR by two or more of four symptoms,bousquet2008,False,reviewer,none,
+Allergic_Rhinitis,watery_eyes,required,required_overstated,Ocular symptoms are common but not required,bousquet2008,False,reviewer,none,
+Allergic_Rhinitis,fatigue,excluding,exclusion_overstated,Fatigue and sleep disturbance are common in allergic rhinitis,bousquet2008,False,reviewer,none,
+Ankylosing_Spondylitis,HLA_B27,required,required_overstated,HLA-B27 is absent in a minority; it is one criterion among several,rudwaleit2009,True,reviewer,none,
+Ankylosing_Spondylitis,sacroiliac_tenderness,required,required_overstated,Tenderness is not an ASAS criterion; imaging sacroiliitis is,rudwaleit2009,False,reviewer,none,
+Aortic_Dissection,blood_pressure_differential,required,required_overstated,Pulse/BP differential is present in a minority of acute dissections,hagan2000,True,reviewer,none,
+Aortic_Dissection,tearing_chest_pain,required,required_overstated,Abrupt severe pain is typical; tearing/ripping quality is not universal,vonkodolitsch2000,True,reviewer,none,
+Aortic_Dissection,widened_mediastinum,required,required_overstated,Chest radiograph can be normal or non-diagnostic in a substantial minority,hagan2000,True,reviewer,none,
+Aortic_Dissection,ST_elevation,excluding,exclusion_overstated,Coronary ostial involvement can produce ST elevation/ischaemia,isselbacher2022,True,reviewer,none,
+Aortic_Dissection,troponin_elevated,excluding,exclusion_overstated,Myocardial ischaemia from coronary involvement can raise troponin,isselbacher2022,True,reviewer,none,
+Aplastic_Anemia,bleeding,required,required_overstated,Symptoms depend on cytopenia severity,killick2016,True,reviewer+HPO,hpo_lt80pct,0.17
+Aplastic_Anemia,recurrent_infections,required,required_overstated,Symptoms depend on neutropenia severity,killick2016,True,reviewer+HPO,hpo_lt80pct,0.17
+Asthma,reversible_airflow_obstruction,required,required_overstated,Variable airflow limitation may not be documented at a single visit,gina2024,False,reviewer,none,
+Asthma,wheezing,required,required_overstated,Symptoms are variable; wheeze may be absent between exacerbations or in cough-variant asthma,gina2024,False,reviewer,none,
+Asthma,fever,excluding,exclusion_overstated,Infection-triggered exacerbation can include fever,gina2024,False,reviewer,none,
+B12_Deficiency,high_MCV,required,required_overstated,Neurologic disease can occur without macrocytosis/anaemia,stabler2013,False,reviewer,hpo_very_frequent_ge80pct,1.0
+B12_Deficiency,peripheral_neuropathy,required,required_overstated,Neuropathy affects a subset,stabler2013,False,reviewer+HPO,hpo_lt80pct,0.17
+B12_Deficiency,normal_B12,excluding,exclusion_overstated,Serum B12 has limited sensitivity; metabolite testing is used when equivocal,stabler2013,False,reviewer,none,
+Bacterial_Meningitis,altered_mental_status,required,required_overstated,Classic triad is present in fewer than half,vandebeek2004,False,reviewer,none,
+Bacterial_Meningitis,fever,required,required_overstated,"Fever may be absent early, in elderly or immunocompromised",vandebeek2004,False,reviewer,none,
+Bacterial_Meningitis,neck_stiffness,required,required_overstated,"Classic triad (fever, neck stiffness, altered mental status) is present in fewer than half",vandebeek2004,False,reviewer,none,
+COPD,smoking_history,required,required_overstated,Substantial burden of COPD in never-smokers,gold2023,False,reviewer,none,
+COPD,sputum_production,required,required_overstated,Chronic bronchitis phenotype only,gold2023,False,reviewer,none,
+COPD,FEV1_reduced,supporting,category_understated,"Post-bronchodilator airflow limitation is the defining criterion, not merely supportive",gold2023,True,reviewer,none,
+COPD,eosinophilia,excluding,exclusion_overstated,Blood eosinophil count is used to guide therapy; eosinophilia is not exclusionary,gold2023,False,reviewer,none,
+COPD,no_smoking_history,excluding,exclusion_overstated,"COPD occurs in never-smokers (biomass, occupational, AATD)",gold2023,False,reviewer,none,
+COPD,reversible_airflow_obstruction,excluding,exclusion_overstated,Post-bronchodilator spirometry defines COPD; partial reversibility is common,gold2023,False,reviewer,none,
+COPD,young_age,excluding,exclusion_overstated,Early-onset COPD occurs (alpha-1 antitrypsin deficiency),gold2023,False,reviewer,none,
+Cardiac_Tamponade,hypotension,required,required_overstated,Beck triad components have limited sensitivity; hypotension is a late sign,roy2007,True,reviewer,none,
+Cardiac_Tamponade,jugular_venous_distension,required,required_overstated,JVD may be absent in hypovolaemic/regional tamponade,roy2007,True,reviewer,none,
+Cardiac_Tamponade,muffled_heart_sounds,required,required_overstated,Muffled heart sounds are inconsistent,roy2007,True,reviewer,none,
+Chronic_Lymphocytic_Leukemia,age_over_50,required,required_overstated,Younger patients are diagnosed,hallek2018,True,reviewer,none,
+Chronic_Lymphocytic_Leukemia,painless_lymphadenopathy,required,required_overstated,Diagnosis rests on B-lymphocyte count; lymphadenopathy is not required,hallek2018,True,reviewer,none,
+Chronic_Lymphocytic_Leukemia,young_age,excluding,exclusion_overstated,Younger patients are diagnosed,hallek2018,True,reviewer,none,
+Cluster_Headache,lacrimation,required,required_overstated,ICHD-3 requires at least one of several ipsilateral autonomic signs or restlessness,ichd3,True,reviewer,none,
+Cluster_Headache,aura,excluding,exclusion_overstated,Aura has been described in a minority,ichd3,True,reviewer,none,
+Cluster_Headache,nausea,excluding,exclusion_overstated,Nausea is reported by a subset of patients,ichd3,True,reviewer,none,
+Community_Pneumonia,crackles,required,required_overstated,Auscultatory findings are insensitive,metlay2019,False,reviewer,none,
+Community_Pneumonia,fever,required,required_overstated,Older/frail patients may lack fever,metlay2019,True,reviewer,none,
+Community_Pneumonia,productive_cough,required,required_overstated,Atypical pneumonia often presents with dry cough,metlay2019,False,reviewer,none,
+Community_Pneumonia,smoking_history,excluding,exclusion_overstated,Smoking is a risk factor for CAP,metlay2019,True,reviewer,none,
+Cushing_Syndrome,central_obesity,required,required_overstated,HPO disease-phenotype annotation gives frequency 0.55 (category midpoint or reported ratio); not independently clinician-reviewed,HPO,,HPO_only,hpo_lt80pct,0.55
+Cushing_Syndrome,moon_face,required,required_overstated,Individual features have limited sensitivity,nieman2008,True,reviewer,hpo_very_frequent_ge80pct,0.9
+Cushing_Syndrome,purple_striae,required,required_overstated,No single sign discriminates; striae present in a subset,nieman2008,True,reviewer+HPO,hpo_lt80pct,0.55
+Cushing_Syndrome,hyperpigmentation,excluding,exclusion_overstated,ACTH-dependent Cushing syndrome (especially ectopic) can cause hyperpigmentation,nieman2008,True,reviewer+HPO,excluding_hpo_present_ge10pct,0.55
+Cushing_Syndrome,weight_loss_rapid,excluding,exclusion_overstated,HPO disease-phenotype annotation gives frequency 0.17 (category midpoint or reported ratio); not independently clinician-reviewed,HPO,,HPO_only,excluding_hpo_present_ge10pct,0.17
+Epilepsy,loss_of_consciousness,required,required_overstated,Focal aware seizures preserve awareness,scheffer2017,True,reviewer,none,
+Gout,MSU_crystals,required,required_overstated,Crystal identification is the reference standard but is not obtained in all cases; classification criteria use an entry plus clinical items,neogi2015,True,reviewer,none,
+Gout,high_uric_acid,required,required_overstated,Serum urate may be normal during acute flares,neogi2015,True,reviewer,hpo_very_frequent_ge80pct,1.0
+Gout,DIP_involvement,excluding,exclusion_overstated,"Gout can involve DIP joints, especially with nodal OA",neogi2015,True,reviewer,none,
+Guillain_Barre,areflexia,required,required_overstated,Reflexes may be normal or brisk in some variants/early disease,leonhard2019,False,reviewer+HPO,hpo_lt80pct,0.55
+Guillain_Barre,ascending_weakness,required,required_overstated,"Variants include pharyngeal-cervical-brachial, paraparetic, Miller Fisher",willison2016,True,reviewer,none,
+HUS,diarrhea,required,subtype_dependent,Diarrhea-associated (STEC) versus atypical HUS,joseph2020,True,reviewer+HPO,hpo_lt80pct,0.55
+HUS,fever,excluding,exclusion_overstated,Fever occurs in some STEC-HUS patients,joseph2020,True,reviewer+HPO,excluding_hpo_present_ge10pct,0.55
+HUS,neurologic_symptoms,excluding,contradicted,Neurological involvement is a recognised complication of STEC-HUS,joseph2020,True,reviewer,none,
+HUS,no_diarrhea,excluding,subtype_dependent,Atypical HUS lacks a diarrheal prodrome,joseph2020,True,reviewer,none,
+Heart_Failure,elevated_BNP,required,required_overstated,"Natriuretic peptides can be normal in obesity, HFpEF, or compensated states",mcdonagh2021,False,reviewer,none,
+Heart_Failure,peripheral_edema,required,required_overstated,Congestion may be pulmonary only; edema is nonspecific and often absent,mcdonagh2021,False,reviewer,none,
+Heart_Failure,sudden_onset,excluding,exclusion_overstated,Acute heart failure/pulmonary edema can present abruptly,mcdonagh2021,True,reviewer,none,
+Hemophilia_A,hemarthrosis,required,required_overstated,Spontaneous haemarthrosis is mainly a severe-phenotype feature,srivastava2020,False,reviewer+HPO,hpo_lt80pct,0.6357615894039735
+Hemophilia_A,prolonged_aPTT,required,required_overstated,aPTT can be normal in mild hemophilia,srivastava2020,False,reviewer,hpo_very_frequent_ge80pct,0.9
+Hemophilia_A,male,supporting,category_understated,X-linked inheritance: clinically significant disease is almost entirely male,srivastava2020,False,reviewer,none,
+Hemophilia_A,normal_coagulation_studies,excluding,exclusion_overstated,Routine screening may be normal in mild disease,srivastava2020,False,reviewer,none,
+Hodgkin_Lymphoma,B_symptoms,required,required_overstated,B symptoms are present in a minority and are staging modifiers,eichenauer2018,False,reviewer+HPO,hpo_lt80pct,0.55
+Hyperthyroidism,heat_intolerance,required,required_overstated,Symptoms vary; older patients are oligosymptomatic,ross2016,False,reviewer,none,
+Hyperthyroidism,low_TSH,required,subtype_dependent,Central (TSH-mediated) hyperthyroidism has non-suppressed TSH,ross2016,False,reviewer,none,
+Hyperthyroidism,tachycardia,required,required_overstated,Older patients can have apathetic/oligosymptomatic hyperthyroidism,ross2016,False,reviewer,hpo_very_frequent_ge80pct,0.9
+Hypothyroidism,cold_intolerance,required,required_overstated,Symptoms are nonspecific and often absent in subclinical disease,jonklaas2014,False,reviewer,none,
+Hypothyroidism,elevated_TSH,required,subtype_dependent,Elevated TSH is typical of primary but not central hypothyroidism,jonklaas2014,False,reviewer,hpo_very_frequent_ge80pct,1.0
+Hypothyroidism,fatigue,required,required_overstated,HPO disease-phenotype annotation gives frequency 0.55 (category midpoint or reported ratio); not independently clinician-reviewed,HPO,,HPO_only,hpo_lt80pct,0.55
+Hypothyroidism,weight_gain,required,required_overstated,Symptoms are nonspecific and often absent in subclinical disease,jonklaas2014,False,reviewer,none,
+Hypothyroidism,low_TSH,excluding,exclusion_overstated,Low or inappropriately normal TSH occurs in central hypothyroidism,jonklaas2014,False,reviewer,none,
+ITP,petechiae,required,required_overstated,Bleeding manifestations are variable; many are asymptomatic,provan2019,True,reviewer+HPO,hpo_lt80pct,0.55
+Idiopathic_Intracranial_HTN,papilledema,required,required_overstated,HPO disease-phenotype annotation gives frequency 0.55 (category midpoint or reported ratio); not independently clinician-reviewed,HPO,,HPO_only,hpo_lt80pct,0.55
+Idiopathic_Intracranial_HTN,vision_changes,required,required_overstated,Visual symptoms are common but not universal,mollan2018,True,reviewer+HPO,hpo_lt80pct,0.17
+Insulinoma,confusion,required,required_overstated,Neuroglycopenic symptoms vary; Whipple triad is the defining construct,cryer2009,True,reviewer,none,
+Insulinoma,elevated_insulin_during_hypoglycemia,supporting,category_understated,Inappropriately high insulin during documented hypoglycaemia is the biochemical diagnostic criterion,cryer2009,True,reviewer,none,
+Iron_Deficiency_Anemia,fatigue,required,required_overstated,Many patients are asymptomatic,camaschella2015,False,reviewer,none,
+Iron_Deficiency_Anemia,pallor,required,required_overstated,Pallor is insensitive,camaschella2015,False,reviewer,none,
+Iron_Deficiency_Anemia,normal_ferritin,excluding,exclusion_overstated,Ferritin can be normal with inflammation despite iron deficiency,camaschella2015,False,reviewer,none,
+Lung_Cancer,hemoptysis,required,required_overstated,Hemoptysis occurs in a minority; many cases are asymptomatic or incidental,beckles2003,False,reviewer,none,
+Lung_Cancer,persistent_cough,required,required_overstated,Symptoms are variable; many are asymptomatic at diagnosis,beckles2003,False,reviewer,none,
+Lung_Cancer,weight_loss_rapid,required,required_overstated,Weight loss is non-universal and usually a late feature,beckles2003,False,reviewer,none,
+Lung_Cancer,positive_AFB,excluding,exclusion_overstated,TB and lung cancer can coexist,lewinsohn2017,False,reviewer,none,
+Lung_Cancer,reversible_airflow_obstruction,excluding,exclusion_overstated,COPD/asthma commonly coexist with lung cancer,beckles2003,False,reviewer,none,
+Lung_Cancer,velcro_crackles,excluding,exclusion_overstated,ILD/IPF are associated with higher lung-cancer risk,raghu2018,False,reviewer,none,
+Metabolic_Syndrome,central_obesity,required,definitional_mismatch,"Harmonised criteria require any 3 of 5 components, not all",alberti2009,False,reviewer,none,
+Metabolic_Syndrome,high_fasting_glucose,required,definitional_mismatch,"Harmonised criteria require any 3 of 5 components, not all",alberti2009,False,reviewer+HPO,hpo_lt80pct,0.18518518518518517
+Metabolic_Syndrome,high_triglycerides,required,definitional_mismatch,"Harmonised criteria require any 3 of 5 components, not all",alberti2009,False,reviewer,none,
+Metabolic_Syndrome,hypertension,required,definitional_mismatch,"Harmonised criteria require any 3 of 5 components, not all",alberti2009,False,reviewer,hpo_very_frequent_ge80pct,1.0
+Metabolic_Syndrome,low_HDL,required,definitional_mismatch,"Harmonised criteria require any 3 of 5 components, not all",alberti2009,False,reviewer,none,
+Metabolic_Syndrome,thin_body_habitus,excluding,exclusion_overstated,Metabolic syndrome occurs at normal BMI,alberti2009,True,reviewer,none,
+Migraine,nausea,required,required_overstated,ICHD-3 requires nausea/vomiting OR photophobia and phonophobia,ichd3,True,reviewer,hpo_very_frequent_ge80pct,1.0
+Migraine,photophobia,required,required_overstated,ICHD-3 requires nausea/vomiting OR photophobia and phonophobia,ichd3,True,reviewer,hpo_very_frequent_ge80pct,0.8888888888888888
+Migraine,focal_neuro_deficit,excluding,exclusion_overstated,Aura can include motor/brainstem/speech symptoms (e.g. hemiplegic migraine),ichd3,True,reviewer,none,
+Multiple_Sclerosis,relapsing_remitting_course,required,required_overstated,Primary progressive MS is a recognised course,thompson2018,False,reviewer,none,
+Multiple_Sclerosis,headache,excluding,exclusion_overstated,Headache is common and comorbid migraine is frequent,thompson2018,False,reviewer,none,
+Myasthenia_Gravis,diplopia,required,required_overstated,HPO disease-phenotype annotation gives frequency 0.55 (category midpoint or reported ratio); not independently clinician-reviewed,HPO,,HPO_only,hpo_lt80pct,0.55
+Myasthenia_Gravis,fatigable_weakness,required,required_overstated,HPO disease-phenotype annotation gives frequency 0.55 (category midpoint or reported ratio); not independently clinician-reviewed,HPO,,HPO_only,hpo_lt80pct,0.55
+Myasthenia_Gravis,ptosis,required,required_overstated,HPO disease-phenotype annotation gives frequency 0.55 (category midpoint or reported ratio); not independently clinician-reviewed,HPO,,HPO_only,hpo_lt80pct,0.55
+Osteoarthritis,DIP_involvement,required,required_overstated,"Typical sites include knee, hip and hand joints; DIP involvement is not required",kolasinski2019,True,reviewer,none,
+Parkinsons_Disease,asymmetric_onset,required,required_overstated,"Asymmetry is supportive, not required",postuma2015,False,reviewer,none,
+Parkinsons_Disease,resting_tremor,required,required_overstated,MDS criteria need bradykinesia plus rest tremor OR rigidity,postuma2015,True,reviewer,hpo_very_frequent_ge80pct,1.0
+Parkinsons_Disease,rigidity,required,required_overstated,MDS criteria need bradykinesia plus rest tremor OR rigidity,postuma2015,True,reviewer,hpo_very_frequent_ge80pct,1.0
+Parkinsons_Disease,young_age,excluding,exclusion_overstated,Young-onset Parkinson disease occurs,postuma2015,False,reviewer,none,
+Pericarditis,diffuse_ST_elevation,required,required_overstated,ESC criteria require two of four features; no single finding is required,adler2015,False,reviewer,none,
+Pericarditis,pain_worse_supine,required,required_overstated,ESC criteria require two of four features; no single finding is required,adler2015,False,reviewer,none,
+Pericarditis,pericardial_friction_rub,required,required_overstated,Rub is present in a variable minority; two of four criteria suffice,adler2015,False,reviewer,none,
+Pericarditis,pleuritic_chest_pain,required,required_overstated,Two of four criteria suffice,adler2015,False,reviewer,none,
+Pericarditis,troponin_markedly_elevated,excluding,exclusion_overstated,Myopericarditis raises troponin; elevation does not exclude pericarditis,adler2015,False,reviewer,none,
+Pheochromocytoma,diaphoresis,required,required_overstated,HPO disease-phenotype annotation gives frequency 0.55 (category midpoint or reported ratio); not independently clinician-reviewed,HPO,,HPO_only,hpo_lt80pct,0.55
+Pheochromocytoma,episodic_hypertension,required,required_overstated,Hypertension may be sustained or absent,lenders2014,False,reviewer,none,
+Pheochromocytoma,headache,required,required_overstated,HPO disease-phenotype annotation gives frequency 0.55 (category midpoint or reported ratio); not independently clinician-reviewed,HPO,,HPO_only,hpo_lt80pct,0.55
+Pheochromocytoma,tachycardia,required,required_overstated,Symptoms are paroxysmal and variable,lenders2014,False,reviewer+HPO,hpo_lt80pct,0.55
+Pheochromocytoma,hypotension,excluding,exclusion_overstated,Orthostatic hypotension is reported,lenders2014,True,reviewer+HPO,excluding_hpo_present_ge10pct,0.55
+Polycythemia_Vera,splenomegaly,required,required_overstated,Splenomegaly is present in a subset at diagnosis,barbui2018,True,reviewer,hpo_very_frequent_ge80pct,0.967741935483871
+Primary_Hyperaldosteronism,hypokalemia,required,required_overstated,Normokalaemia is common in primary aldosteronism,funder2016,True,reviewer,hpo_very_frequent_ge80pct,1.0
+Psoriatic_Arthritis,dactylitis,required,required_overstated,"Dactylitis is one CASPAR item, not required",taylor2006,True,reviewer,none,
+Psoriatic_Arthritis,psoriasis,required,required_overstated,CASPAR also counts history/family history and arthritis can precede skin disease,taylor2006,True,reviewer,none,
+Psoriatic_Arthritis,positive_RF,excluding,exclusion_overstated,Negative RF is a CASPAR item but positive RF occurs in a minority,taylor2006,True,reviewer,none,
+Pulmonary_Embolism,pleuritic_chest_pain,required,required_overstated,Present in roughly half or fewer; PIOPED II reports symptom frequencies,stein2007,False,reviewer,none,
+Pulmonary_Embolism,sudden_dyspnea,required,required_overstated,Onset may be gradual; dyspnea is not universal,stein2007,True,reviewer,none,
+Pulmonary_Embolism,tachycardia,required,required_overstated,Tachycardia is present in a minority of confirmed PE,stein2007,True,reviewer,none,
+Pulmonary_Embolism,Wells_score_high,supporting,token_not_a_finding,"The Wells score is a derived pre-test probability rule, not an observed clinical finding",wells2000,True,reviewer,none,
+Pulmonary_Embolism,crackles,excluding,exclusion_overstated,Crackles occur with infarction/atelectasis,stein2007,False,reviewer,none,
+Pulmonary_Embolism,troponin_elevated,excluding,contradicted,Troponin is elevated in PE with RV injury and is used for risk stratification,konstantinides2020,False,reviewer,none,
+Pulmonary_Fibrosis,honeycombing_on_CT,required,required_overstated,Probable UIP without honeycombing supports IPF diagnosis,raghu2018,True,reviewer,none,
+Pulmonary_Fibrosis,smoking_history,excluding,contradicted,Cigarette smoking is an established IPF risk factor,raghu2022,True,reviewer,none,
+Reactive_Arthritis,conjunctivitis,required,required_overstated,The full triad is uncommon,selmi2014,False,reviewer,hpo_very_frequent_ge80pct,0.9
+Reactive_Arthritis,urethritis,required,required_overstated,The full triad is uncommon,selmi2014,False,reviewer+HPO,hpo_lt80pct,0.17
+Rheumatoid_Arthritis,morning_stiffness_over_1hr,required,required_overstated,Not part of the 2010 ACR/EULAR classification criteria,aletaha2010,True,reviewer,none,
+Rheumatoid_Arthritis,positive_RF,required,required_overstated,Seronegative RA is common; criteria score serology but do not require it,aletaha2010,False,reviewer,none,
+Rheumatoid_Arthritis,DIP_involvement,excluding,exclusion_overstated,DIP involvement is uncommon but not exclusionary,aletaha2010,True,reviewer,none,
+Rheumatoid_Arthritis,asymmetric_joint,excluding,exclusion_overstated,Early RA can be asymmetric/oligoarticular,aletaha2010,True,reviewer,none,
+Sarcoidosis,bilateral_hilar_lymphadenopathy,required,required_overstated,Not present in all radiographic stages,crouser2020,True,reviewer,none,
+Sarcoidosis,fatigue,required,required_overstated,HPO disease-phenotype annotation gives frequency 0.55 (category midpoint or reported ratio); not independently clinician-reviewed,HPO,,HPO_only,hpo_lt80pct,0.55
+Sarcoidosis,noncaseating_granulomas,required,required_overstated,Diagnosis can be made clinically in specific syndromes (e.g. Lofgren) without biopsy,crouser2020,True,reviewer,none,
+Sarcoidosis_Pulmo,chronic_cough,required,required_overstated,Many patients are asymptomatic or have extrapulmonary-dominant disease,crouser2020,True,reviewer,none,
+Sarcoidosis_Pulmo,honeycombing_on_CT,excluding,exclusion_overstated,Advanced fibrotic sarcoidosis can show honeycombing,crouser2020,True,reviewer,none,
+Sarcoidosis_Pulmo,upper_lobe_cavitation,excluding,exclusion_overstated,"Cavitary sarcoidosis is described, though uncommon",crouser2020,False,reviewer,none,
+Sickle_Cell_Disease,African_descent,supporting,demographic_proxy,"Ancestry is a population-level correlate (SCD also occurs in Mediterranean, Arab and South Asian ancestries); diagnosis rests on haemoglobin genotype",piel2017,False,reviewer,none,
+Sickle_Cell_Disease,high_MCV,excluding,exclusion_overstated,Hydroxyurea increases MCV in sickle cell disease,piel2017,False,reviewer,none,
+Sickle_Cell_Disease,target_cells,excluding,exclusion_overstated,Target cells occur in haemoglobin SC and other sickle genotypes,piel2017,True,reviewer,none,
+Sjogren_Syndrome,positive_anti_SSA,required,required_overstated,"Anti-SSA is one weighted criterion, not required",shiboski2017,True,reviewer,none,
+Sjogren_Syndrome,positive_anti_SSB,required,required_overstated,Anti-SSB is found in a minority; 2016 ACR/EULAR criteria weight anti-SSA,shiboski2017,True,reviewer,none,
+Stroke_Ischemic,speech_difficulty,required,required_overstated,Not all ischaemic strokes cause speech deficits,powers2019,False,reviewer,none,
+Stroke_Ischemic,bilateral_symptoms,excluding,exclusion_overstated,Posterior-circulation/brainstem strokes can cause bilateral symptoms,powers2019,False,reviewer,none,
+Subarachnoid_Hemorrhage,neck_stiffness,required,required_overstated,Meningism develops over hours and is often absent early; it is a predictor in the Ottawa SAH rule rather than a requirement,perry2013,True,reviewer,none,
+Subarachnoid_Hemorrhage,bilateral_pain,excluding,exclusion_overstated,SAH headache is commonly holocranial/generalised,hoh2023,False,reviewer,none,
+Systemic_Lupus,joint_pain,required,required_overstated,HPO disease-phenotype annotation gives frequency 0.67 (category midpoint or reported ratio); not independently clinician-reviewed,HPO,,HPO_only,hpo_lt80pct,0.6666666666666666
+Systemic_Lupus,malar_rash,required,required_overstated,2019 EULAR/ACR requires ANA entry plus weighted criteria; no single clinical feature is required,aringer2019,True,reviewer,hpo_very_frequent_ge80pct,1.0
+Systemic_Lupus,photosensitivity,required,required_overstated,No single clinical feature is required,aringer2019,True,reviewer,hpo_very_frequent_ge80pct,1.0
+Systemic_Lupus,age_over_50,excluding,exclusion_overstated,Late-onset SLE occurs,aringer2019,True,reviewer,none,
+T1_Diabetes,ketoacidosis,required,required_overstated,DKA at diagnosis occurs in a subset only,ada2024_dx,True,reviewer,none,
+T1_Diabetes,young_age,required,required_overstated,Type 1 diabetes can be diagnosed at any age,ada2024_dx,True,reviewer,none,
+T1_Diabetes,autoantibodies_positive,supporting,category_understated,Islet autoantibodies are present in most type 1 diabetes and define autoimmune aetiology,ada2024_dx,True,reviewer,none,
+T1_Diabetes,age_over_50,excluding,exclusion_overstated,Adult-onset autoimmune diabetes (including LADA) occurs,ada2024_dx,True,reviewer,none,
+T1_Diabetes,gradual_onset,excluding,exclusion_overstated,Slowly progressive autoimmune diabetes occurs in adults,ada2024_dx,True,reviewer,none,
+T1_Diabetes,obesity,excluding,exclusion_overstated,Obesity is increasingly common in type 1 diabetes,ada2024_dx,True,reviewer,none,
+T2_Diabetes,polydipsia,required,required_overstated,Many are asymptomatic and detected by laboratory testing,ada2024_dx,True,reviewer,none,
+T2_Diabetes,polyuria,required,required_overstated,Many are asymptomatic and detected by laboratory testing,ada2024_dx,True,reviewer,none,
+T2_Diabetes,autoantibodies_positive,excluding,exclusion_overstated,Autoimmune markers occur in a minority labelled type 2,ada2024_dx,True,reviewer,none,
+T2_Diabetes,ketoacidosis,excluding,exclusion_overstated,Ketosis-prone type 2 diabetes occurs,umpierrez2024,False,reviewer,none,
+T2_Diabetes,young_age,excluding,exclusion_overstated,Youth-onset type 2 diabetes occurs,ada2024_dx,True,reviewer,none,
+TTP,fever,required,required_overstated,Classic pentad is uncommon; ADAMTS13 activity establishes the diagnosis,zheng2020,True,reviewer+HPO,hpo_lt80pct,0.55
+TTP,neurologic_symptoms,required,required_overstated,Classic pentad is uncommon; ADAMTS13 activity establishes the diagnosis,zheng2020,True,reviewer,none,
+TTP,schistocytes,required,required_overstated,HPO disease-phenotype annotation gives frequency 0.55 (category midpoint or reported ratio); not independently clinician-reviewed,HPO,,HPO_only,hpo_lt80pct,0.55
+TTP,low_ADAMTS13,supporting,category_understated,Severe ADAMTS13 deficiency is the diagnostic test,zheng2020,True,reviewer,none,
+Tension_Headache,bilateral_pain,required,required_overstated,"ICHD-3 needs two of four pain characteristics, so bilateral location is not required",ichd3,True,reviewer,none,
+Tension_Headache,pressing_quality,required,required_overstated,"ICHD-3 needs two of four pain characteristics, so pressing quality is not required",ichd3,False,reviewer,none,
+Thalassemia_Trait,normal_RDW,required,required_overstated,RDW is often normal but not invariably,taher2018,False,reviewer,none,
+Thalassemia_Trait,target_cells,required,required_overstated,Target cells are variable in carriers,taher2018,False,reviewer,none,
+Thalassemia_Trait,Mediterranean_descent,supporting,demographic_proxy,Carrier frequency is also high in South/Southeast Asian and African ancestries; diagnosis rests on haemoglobin/genotype testing,taher2018,False,reviewer,none,
+Thalassemia_Trait,low_ferritin,excluding,exclusion_overstated,Carriers can have coexisting iron deficiency,taher2018,True,reviewer,none,
+Tuberculosis,positive_AFB,required,required_overstated,Smear is negative in a large fraction of pulmonary TB; culture/NAAT needed,lewinsohn2017,True,reviewer,none,
+Infective_Endocarditis,fever_persistent,required,required_overstated,"Fever may be absent in elderly, immunocompromised or antibiotic-treated patients",fowler2023,False,reviewer,none,
+Infective_Endocarditis,new_heart_murmur,required,required_overstated,New murmur is present in a minority at presentation,delgado2023,False,reviewer,none,
+Infective_Endocarditis,positive_blood_cultures,required,required_overstated,Culture-negative endocarditis is recognised,fowler2023,True,reviewer,none,
+Infective_Endocarditis,no_murmur,excluding,exclusion_overstated,"Murmur may be absent, especially right-sided or early disease",delgado2023,False,reviewer,none,
+Infective_Endocarditis,negative_blood_cultures,excluding,exclusion_overstated,Negative cultures do not generally exclude endocarditis,fowler2023,True,reviewer,none,
+Pneumothorax,decreased_breath_sounds_unilateral,required,required_overstated,Small pneumothorax may have a normal examination,roberts2023,False,reviewer,none,
+Pneumothorax,bilateral_breath_sounds_equal,excluding,exclusion_overstated,Equal breath sounds do not exclude small pneumothorax,macduff2010,False,reviewer,none,
+Trigeminal_Neuralgia,continuous_constant_pain,excluding,exclusion_overstated,ICHD-3/EAN recognise TN with concomitant continuous pain,cruccu2016,True,reviewer,none,
+Anaphylaxis,airway_compromise_or_hypotension,required,required_overstated,Criteria allow multi-system involvement without hypotension,sampson2006,True,reviewer,none,
+Anaphylaxis,urticaria_acute,required,required_overstated,Skin findings are absent in some cases; criteria include non-cutaneous presentations,sampson2006,True,reviewer,none,
+Anaphylaxis,no_exposure_history,excluding,contradicted,Idiopathic anaphylaxis with no identified trigger is recognised,cardona2020,True,reviewer,none,
+Disseminated_Intravascular_Coagulation,concurrent_bleeding_and_clotting,required,required_overstated,ISTH score uses laboratory criteria; clinical bleeding and thrombosis need not coexist,taylor2001,False,reviewer,none,
+Disseminated_Intravascular_Coagulation,low_fibrinogen,required,required_overstated,Fibrinogen is an acute-phase reactant and may be normal early,taylor2001,False,reviewer,none,
+Disseminated_Intravascular_Coagulation,isolated_bleeding_only,excluding,exclusion_overstated,Bleeding-predominant DIC phenotypes occur,taylor2001,False,reviewer,none,
+Acute_Kidney_Injury,oliguria,required,required_overstated,Non-oliguric AKI is common; KDIGO uses creatinine OR urine output,kdigo2012aki,True,reviewer,none,
+Acute_Kidney_Injury,fluid_overload,required,required_overstated,"Fluid overload is a complication, not a criterion",kdigo2012aki,True,reviewer,none,
+Acute_Kidney_Injury,preserved_urine_output,excluding,contradicted,Non-oliguric AKI exists,kdigo2012aki,True,reviewer,none,
+Nephrotic_Syndrome,peripheral_edema_generalized,required,required_overstated,Edema is typical but may be absent or localised early,kdigo2021gn,False,reviewer,none,
+Polycystic_Kidney_Disease,bilateral_flank_pain,required,required_overstated,Pain affects a majority but not all; many are detected by imaging,chapman2015,True,reviewer,none,
+Polycystic_Kidney_Disease,family_history_renal_disease,required,required_overstated,A proportion have no family history (de novo/mild disease),pei2009,False,reviewer,none,
+Polycystic_Kidney_Disease,palpable_bilateral_kidneys,required,required_overstated,Palpable kidneys are a late finding; diagnosis is by imaging/genetics,pei2009,True,reviewer,none,
+Polycystic_Kidney_Disease,no_family_history_renal,excluding,exclusion_overstated,A proportion have no family history,pei2009,False,reviewer,none,
+Renal_Cell_Carcinoma,flank_mass_palpable,required,required_overstated,Classic triad is now uncommon; most cases are incidental,ljungberg2022,False,reviewer,none,
+Renal_Cell_Carcinoma,gross_hematuria,required,required_overstated,Classic triad is now uncommon; most cases are incidental,ljungberg2022,False,reviewer,none,
+Renal_Cell_Carcinoma,unintentional_weight_loss,required,required_overstated,Classic triad is now uncommon; most cases are incidental,ljungberg2022,False,reviewer,none,
+Glomerulonephritis,hypertension_new_onset,required,required_overstated,Not all glomerulonephritis presents with hypertension,kdigo2021gn,True,reviewer+HPO,hpo_lt80pct,0.55
+Glomerulonephritis,periorbital_edema,required,required_overstated,Edema is variable,kdigo2021gn,False,reviewer,none,
+Nephrolithiasis,microscopic_or_gross_hematuria,required,required_overstated,Hematuria can be absent in a minority of stone patients,pearle2014,False,reviewer,none,
+Nephrolithiasis,stone_visible_on_imaging,supporting,category_understated,Imaging demonstration of a stone is confirmatory,pearle2014,True,reviewer,none,
+Nephrolithiasis,high_fever_with_sepsis,excluding,contradicted,Infection with an obstructing stone is a recognised emergency,pearle2014,False,reviewer,none,
+Acute_Appendicitis,low_grade_fever,required,required_overstated,Fever is one Alvarado item and is frequently absent,alvarado1986,False,reviewer,none,
+Acute_Appendicitis,LLQ_abdominal_pain,excluding,exclusion_overstated,"Atypical locations occur (malrotation, left-sided appendix, pelvic/long appendix)",disaverio2020,True,reviewer,none,
+Peptic_Ulcer_Disease,NSAID_use_or_H_pylori_infection,required,required_overstated,A minority of ulcers are idiopathic,lanas2017,True,reviewer,none,
+Peptic_Ulcer_Disease,nocturnal_epigastric_pain,required,required_overstated,Pain pattern is nonspecific,lanas2017,True,reviewer,none,
+Ulcerative_Colitis,tenesmus,required,required_overstated,Tenesmus is typical of distal disease; not universal,rubin2019,False,reviewer,none,
+Ulcerative_Colitis,skip_lesions_on_colonoscopy,excluding,exclusion_overstated,Patchiness/rectal sparing occurs in treated or paediatric UC,rubin2019,False,reviewer,none,
+Crohn_Disease,perianal_fistula,required,required_overstated,Perianal fistulizing disease affects a minority,lichtenstein2018,False,reviewer,none,
+Crohn_Disease,continuous_colonic_involvement,excluding,exclusion_overstated,Crohn colitis can appear continuous,lichtenstein2018,False,reviewer,none,
+Acute_Pancreatitis,elevated_lipase,required,required_overstated,Revised Atlanta needs two of three criteria; imaging or pain+criteria can substitute,banks2013,True,reviewer,none,
+Acute_Pancreatitis,alcohol_or_gallstone_history,required,required_overstated,"Other etiologies (hypertriglyceridemia, drugs, idiopathic) account for a meaningful minority",tenner2013,True,reviewer,none,
+Acute_Pancreatitis,normal_lipase,excluding,exclusion_overstated,Late presentation or hypertriglyceridemia can yield normal lipase,banks2013,True,reviewer,none,
+Acute_Cholecystitis,positive_Murphy_sign,required,required_overstated,Murphy sign has limited sensitivity,yokoe2018,False,reviewer,none,
+Acute_Cholecystitis,low_grade_fever,required,required_overstated,"TG18 requires one local sign plus one systemic sign (fever, CRP or WBC)",yokoe2018,False,reviewer,none,
+Acute_Cholecystitis,gallstones_on_imaging,supporting,category_understated,Gallstones are present in the great majority; imaging is a TG18 diagnostic criterion,yokoe2018,True,reviewer,none,
+Psoriasis,extensor_surface_distribution,required,required_overstated,"Inverse, guttate and pustular variants exist",armstrong2020,True,reviewer,none,
+Psoriasis,nail_pitting,required,required_overstated,Nail disease affects roughly half of patients,armstrong2020,False,reviewer+HPO,hpo_lt80pct,0.55
+Cellulitis,low_grade_fever,required,required_overstated,Systemic signs are inconsistent,stevens2014,False,reviewer,none,
+Herpes_Zoster,pain_preceding_rash,required,required_overstated,Prodromal pain is common but not universal; zoster sine herpete occurs,cohen2013,True,reviewer,none,
+Herpes_Zoster,painless_rash,excluding,exclusion_overstated,Painless zoster occurs,cohen2013,True,reviewer,none,
+Stevens_Johnson_Syndrome,skin_detachment,required,required_overstated,SJS is defined by limited detachment (<10% BSA),bastuji1993,True,reviewer,none,
+Stevens_Johnson_Syndrome,recent_new_medication_exposure,required,required_overstated,A minority are infection-related or idiopathic,bastuji1993,True,reviewer,none,
+Stevens_Johnson_Syndrome,no_recent_medication_change,excluding,exclusion_overstated,Non-drug etiologies occur,bastuji1993,True,reviewer,none,
+Erythema_Multiforme,recent_HSV_infection,required,required_overstated,"HSV is the commonest trigger, but other infections and drugs can precipitate EM",trayes2019,True,reviewer,none,
+Erythema_Multiforme,recent_new_medication_exposure,excluding,exclusion_overstated,Drug-associated EM is described,trayes2019,True,reviewer,none,

@@ -1,0 +1,11 @@
+scheme,n_models,spearman_vs_baseline,pearson_vs_baseline,spearman_gamma_accuracy,pearson_gamma_accuracy,spearman_gammaprior_accuracy,all_converged,note
+baseline (replication),15,1.0,1.0,0.9848082574079745,0.9817475306496986,0.45397694624614443,True,recomputed evidence reproduces stored feature to 1e-14
+softer_probabilities req.70/sup.40/exc.10/bg.05,15,1.0,0.9997249595037768,0.9848082574079745,0.9812407934471297,0.45397694624614443,True,
+sharper_probabilities req.95/sup.60/exc.01/bg.02,15,1.0,0.9999765454550619,0.9848082574079745,0.9817855421164853,0.45933887868212253,True,
+weak_exclusion exc=.20 (exclusions barely informative),15,1.0,0.9997258263062639,0.9848082574079745,0.9809909450411033,0.45397694624614443,True,
+required=supporting (no hard necessity) req=sup=.50,15,1.0,0.9997558890303955,0.9848082574079745,0.9819703372810136,0.45397694624614443,True,
+exclusions removed (treated as background),15,1.0,0.9999877646260842,0.9848082574079745,0.9816309117516563,0.45397694624614443,True,
+"random relation corruption q=0.1 (20 draws): mean [min,max]",15,0.9994642857142857,0.9996592446539541,0.9842720641643765,,,,"spearman_vs_baseline range [0.996,1.000]; gamma-accuracy rho range [0.981,0.985]"
+"random relation corruption q=0.25 (20 draws): mean [min,max]",15,0.9987499999999999,0.9989012170396083,0.9835571398395796,,,,"spearman_vs_baseline range [0.996,1.000]; gamma-accuracy rho range [0.981,0.985]"
+audit: contradicted/overstated-exclusion relations -> background,15,1.0,0.9999982094059904,0.9848082574079745,0.9816736409498237,0.45397694624614443,True,72 relations changed
+audit: + overstated-required relations downgraded to supporting,15,1.0,0.9998967450936305,0.9848082574079745,0.9811001311597163,0.45397694624614443,True,220 relations changed

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
-"""Does the (gamma_prior, gamma_evidence) MEASUREMENT itself transfer across
-distributions, not just describe whichever data it was fit on?
+"""Evaluate fitted (gamma_prior, gamma_evidence) coefficients across
+disease groups and difficulty levels.
 
 1. Fit on original-58-disease vignettes only, predict (evaluate held-out PL
    log-likelihood) on the 3 held-out organ systems (never seen in any

@@ -1,0 +1,74 @@
+model,quad2,trans,n
+mistral-7b-instruct,less_prev|eq_evid,wrong->different wrong,14
+mistral-7b-instruct,less_prev|higher_evid,wrong->correct,44
+mistral-7b-instruct,less_prev|higher_evid,wrong->different wrong,11
+mistral-7b-instruct,less_prev|lower_evid,correct->wrong,21
+mistral-7b-instruct,less_prev|lower_evid,wrong->different wrong,16
+mistral-7b-instruct,more_prev|eq_evid,wrong->different wrong,4
+mistral-7b-instruct,more_prev|higher_evid,wrong->correct,7
+mistral-7b-instruct,more_prev|higher_evid,wrong->different wrong,6
+mistral-7b-instruct,more_prev|lower_evid,correct->wrong,10
+mistral-7b-instruct,more_prev|lower_evid,wrong->different wrong,3
+olmo-2-7b,eqprev_prev|eq_evid,wrong->different wrong,1
+olmo-2-7b,eqprev_prev|higher_evid,wrong->correct,1
+olmo-2-7b,eqprev_prev|higher_evid,wrong->different wrong,1
+olmo-2-7b,eqprev_prev|lower_evid,correct->wrong,2
+olmo-2-7b,less_prev|eq_evid,wrong->different wrong,21
+olmo-2-7b,less_prev|higher_evid,wrong->correct,31
+olmo-2-7b,less_prev|higher_evid,wrong->different wrong,17
+olmo-2-7b,less_prev|lower_evid,correct->wrong,50
+olmo-2-7b,less_prev|lower_evid,wrong->different wrong,19
+olmo-2-7b,more_prev|eq_evid,wrong->different wrong,4
+olmo-2-7b,more_prev|higher_evid,wrong->correct,13
+olmo-2-7b,more_prev|higher_evid,wrong->different wrong,11
+olmo-2-7b,more_prev|lower_evid,correct->wrong,17
+olmo-2-7b,more_prev|lower_evid,wrong->different wrong,4
+phi-3.5-mini,less_prev|eq_evid,wrong->different wrong,5
+phi-3.5-mini,less_prev|higher_evid,wrong->correct,13
+phi-3.5-mini,less_prev|higher_evid,wrong->different wrong,3
+phi-3.5-mini,less_prev|lower_evid,correct->wrong,19
+phi-3.5-mini,less_prev|lower_evid,wrong->different wrong,4
+phi-3.5-mini,more_prev|eq_evid,wrong->different wrong,2
+phi-3.5-mini,more_prev|higher_evid,wrong->correct,5
+phi-3.5-mini,more_prev|higher_evid,wrong->different wrong,3
+phi-3.5-mini,more_prev|lower_evid,correct->wrong,5
+phi-3.5-mini,more_prev|lower_evid,wrong->different wrong,1
+qwen2.5-1.5b,eqprev_prev|eq_evid,wrong->different wrong,1
+qwen2.5-1.5b,less_prev|eq_evid,wrong->different wrong,133
+qwen2.5-1.5b,less_prev|higher_evid,wrong->correct,10
+qwen2.5-1.5b,less_prev|higher_evid,wrong->different wrong,28
+qwen2.5-1.5b,less_prev|lower_evid,correct->wrong,9
+qwen2.5-1.5b,less_prev|lower_evid,wrong->different wrong,27
+qwen2.5-1.5b,more_prev|eq_evid,wrong->different wrong,20
+qwen2.5-1.5b,more_prev|higher_evid,wrong->correct,1
+qwen2.5-1.5b,more_prev|higher_evid,wrong->different wrong,5
+qwen2.5-1.5b,more_prev|lower_evid,correct->wrong,1
+qwen2.5-1.5b,more_prev|lower_evid,wrong->different wrong,7
+qwen2.5-3b,eqprev_prev|higher_evid,wrong->correct,2
+qwen2.5-3b,eqprev_prev|higher_evid,wrong->different wrong,4
+qwen2.5-3b,eqprev_prev|lower_evid,correct->wrong,1
+qwen2.5-3b,less_prev|eq_evid,wrong->different wrong,38
+qwen2.5-3b,less_prev|higher_evid,wrong->correct,23
+qwen2.5-3b,less_prev|higher_evid,wrong->different wrong,17
+qwen2.5-3b,less_prev|lower_evid,correct->wrong,31
+qwen2.5-3b,less_prev|lower_evid,wrong->different wrong,20
+qwen2.5-3b,more_prev|eq_evid,wrong->different wrong,22
+qwen2.5-3b,more_prev|higher_evid,wrong->correct,11
+qwen2.5-3b,more_prev|higher_evid,wrong->different wrong,13
+qwen2.5-3b,more_prev|lower_evid,correct->wrong,11
+qwen2.5-3b,more_prev|lower_evid,wrong->different wrong,11
+qwen2.5-7b,eqprev_prev|eq_evid,wrong->different wrong,2
+qwen2.5-7b,eqprev_prev|higher_evid,wrong->correct,10
+qwen2.5-7b,eqprev_prev|higher_evid,wrong->different wrong,3
+qwen2.5-7b,eqprev_prev|lower_evid,correct->wrong,6
+qwen2.5-7b,eqprev_prev|lower_evid,wrong->different wrong,3
+qwen2.5-7b,less_prev|eq_evid,wrong->different wrong,60
+qwen2.5-7b,less_prev|higher_evid,wrong->correct,69
+qwen2.5-7b,less_prev|higher_evid,wrong->different wrong,50
+qwen2.5-7b,less_prev|lower_evid,correct->wrong,66
+qwen2.5-7b,less_prev|lower_evid,wrong->different wrong,38
+qwen2.5-7b,more_prev|eq_evid,wrong->different wrong,25
+qwen2.5-7b,more_prev|higher_evid,wrong->correct,51
+qwen2.5-7b,more_prev|higher_evid,wrong->different wrong,22
+qwen2.5-7b,more_prev|lower_evid,correct->wrong,29
+qwen2.5-7b,more_prev|lower_evid,wrong->different wrong,21

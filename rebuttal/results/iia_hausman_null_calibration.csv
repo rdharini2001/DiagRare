@@ -1,0 +1,13 @@
+model,group,sims,rejection_rate_at_05
+qwen2.5-7b,organ:GI,40,0.125
+qwen2.5-7b,cluster:inflammatory arthritides,40,0.025
+qwen2.5-7b,pair:UC|Crohn,40,0.025
+qwen2.5-7b,organ:Cardio,40,0.025
+mistral-7b-instruct,organ:GI,40,0.05
+mistral-7b-instruct,cluster:inflammatory arthritides,40,0.05
+mistral-7b-instruct,pair:UC|Crohn,40,0.15
+mistral-7b-instruct,organ:Cardio,40,0.15
+granite-3.1-8b,organ:GI,40,0.1
+granite-3.1-8b,cluster:inflammatory arthritides,40,0.125
+granite-3.1-8b,pair:UC|Crohn,40,0.1
+granite-3.1-8b,organ:Cardio,40,0.05

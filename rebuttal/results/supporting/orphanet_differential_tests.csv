@@ -1,0 +1,9 @@
+suite,test,spearman,perm_p,n_models
+clin_orphanet,gamma_e vs accuracy (same benchmark),0.9166666666666666,0.0010998900109989,9
+clin_orphanet,gamma_e vs agreement with expert top-1,0.9166666666666666,0.0017998200179982,9
+clin_orphanet,accuracy vs agreement with expert top-1,1.0,0.0001999800019998,9
+clin_orphanet,gamma_p vs prior-favouring error excess,0.8499999999999999,0.005999400059994,9
+clin_orphanet,accuracy vs prior-favouring error excess,-0.3,0.4402559744025597,9
+clin_orphanet,gamma_e (here) vs gamma_e (82-way synthetic),0.8833333333333333,0.0022997700229977,9
+clin_orphanet,accuracy (here) vs accuracy (82-way synthetic),0.8833333333333333,0.0037996200379962,9
+clin_orphanet,gamma_p (here) vs gamma_p (82-way synthetic),0.6666666666666667,0.0541945805419458,9

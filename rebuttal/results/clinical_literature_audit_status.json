@@ -1,0 +1,23 @@
+{
+  "relationships_in_ontology": 888,
+  "relationships_with_initial_literature_assessment": 18,
+  "diseases_with_initial_assessment": 6,
+  "clinical_reviewer_count": 0,
+  "profiles_flagged_for_target_exclusion_sensitivity": [
+    "Acute_MI",
+    "Hypothyroidism",
+    "Asthma",
+    "Diabetic_Ketoacidosis",
+    "Infective_Endocarditis"
+  ],
+  "target_cases_excluded": 60,
+  "n_models_sensitivity": 20,
+  "n_models_at_least_50_percent_coverage": 17,
+  "spearman_original_vs_refit_good_coverage": 0.9975490196078433,
+  "limitations": [
+    "Target-case exclusion retains the original 82 candidate features, including flagged profiles as alternatives.",
+    "This is not a complete ontology correction or validation.",
+    "Flags were chosen after reading sources and are exploratory; no prespecified clinical-validation claim.",
+    "Original ontology and inference suite remain unchanged; known issues are disclosed."
+  ]
+}

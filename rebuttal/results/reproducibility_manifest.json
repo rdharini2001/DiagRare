@@ -1,0 +1,164 @@
+{
+ "date": "2026-11-17",
+ "inference": {
+  "engine": "vLLM (version below)",
+  "temperature": 0.0,
+  "seed": 20261108,
+  "dtype": "float16",
+  "max_model_len": 4096,
+  "prefix_caching": false,
+  "max_tokens": {
+   "synthetic suite": 192,
+   "real cases": 100,
+   "boundary v2": 60,
+   "clinical": 70,
+   "plan suite": 60,
+   "knowledge controls": 70,
+   "judge": 40
+  },
+  "chat_template": "native tokenizer template; error if absent",
+  "gpu": "NVIDIA RTX 6000 (24 GB)"
+ },
+ "parsing": {
+  "strict": "whole output must be the JSON object (rebuttal/scripts/analyze_new.py strict mode)",
+  "leading": "first complete JSON object, optional ```json fence, trailing prose ignored; ranking = valid prefix (stops at first invalid/duplicate ID); never infer from prose"
+ },
+ "estimator": {
+  "model": "Plackett\u2013Luce, utility = gamma_p*log prevalence + gamma_e*evidence; common intercept unidentified (tested: shifting it changes NLL by 1.8e-12; refit without it changes gamma by 7e-9)",
+  "ridge": "1e-3*(gamma_p^2+gamma_e^2)",
+  "code": "code_final_v2/analysis/plackett_luce.py"
+ },
+ "evidence_feature": "sum over present findings log(q_d(f)/q_bg) + sum over explicitly absent findings log((1-q_d(f))/(1-q_bg)); q=.90/.50/.02 for required/supporting/excluding listed finding, q_bg=.03 otherwise; raw (not standardised) in primary fits",
+ "package_versions": {
+  "vllm": "0.10.2",
+  "numpy": "2.2.6",
+  "scipy": "1.15.3",
+  "transformers": "4.57.6",
+  "pandas": "2.3.3",
+  "torch": "2.8.0"
+ },
+ "model_revisions": {
+  "qwen2.5-7b": {
+   "repo": "Qwen/Qwen2.5-7B-Instruct",
+   "snapshot": [
+    "a09a35458c702b33eeacc393d103063234e8bc28"
+   ]
+  },
+  "qwen2.5-3b": {
+   "repo": "Qwen/Qwen2.5-3B-Instruct",
+   "snapshot": [
+    "aa8e72537993ba99e69dfaafa59ed015b17504d1"
+   ]
+  },
+  "qwen2.5-1.5b": {
+   "repo": "Qwen/Qwen2.5-1.5B-Instruct",
+   "snapshot": [
+    "989aa7980e4cf806f80c7fef2b1adb7bc71aa306"
+   ]
+  },
+  "qwen2.5-0.5b": {
+   "repo": "Qwen/Qwen2.5-0.5B-Instruct",
+   "snapshot": [
+    "7ae557604adf67be50417f59c2c2f167def9a775"
+   ]
+  },
+  "phi-3.5-mini": {
+   "repo": "microsoft/Phi-3.5-mini-instruct",
+   "snapshot": [
+    "2fe192450127e6a83f7441aef6e3ca586c338b77"
+   ]
+  },
+  "mistral-7b-instruct": {
+   "repo": "mistralai/Mistral-7B-Instruct-v0.3",
+   "snapshot": [
+    "c170c708c41dac9275d15a8fff4eca08d52bab71"
+   ]
+  },
+  "granite-3.1-2b": {
+   "repo": "ibm-granite/granite-3.1-2b-instruct",
+   "snapshot": [
+    "bbc2aed595bd38bd770263dc3ab831db9794441d"
+   ]
+  },
+  "granite-3.1-8b": {
+   "repo": "ibm-granite/granite-3.1-8b-instruct",
+   "snapshot": [
+    "4009206d5fc95d2e65a7b7633e159d6e97e25d35"
+   ]
+  },
+  "med42-8b": {
+   "repo": "m42-health/Llama3-Med42-8B",
+   "snapshot": [
+    "ceab7e7ee4b9dbde7ba82867f34274db51487d83"
+   ]
+  },
+  "nous-hermes-2-7b": {
+   "repo": "NousResearch/Nous-Hermes-2-Mistral-7B-DPO",
+   "snapshot": [
+    "ebec0a691037d38955727d6949798429a63929dd"
+   ]
+  },
+  "openchat-3.5": {
+   "repo": "openchat/openchat-3.5-0106",
+   "snapshot": [
+    "ff058fda49726ecf4ea53dc1635f917cdb8ba36b"
+   ]
+  },
+  "yi-1.5-6b": {
+   "repo": "01-ai/Yi-1.5-6B-Chat",
+   "snapshot": [
+    "771924d1c83d67527d665913415d7086f11ea9c0"
+   ]
+  },
+  "yi-1.5-9b": {
+   "repo": "01-ai/Yi-1.5-9B-Chat",
+   "snapshot": [
+    "1a0fc698cf883c4f5c325f026ca79f0ebd9955a5"
+   ]
+  },
+  "zephyr-7b": {
+   "repo": "HuggingFaceH4/zephyr-7b-beta",
+   "snapshot": [
+    "892b3d7a7b1cf10c7a701c60881cd93df615734c"
+   ]
+  },
+  "stablelm-zephyr-3b": {
+   "repo": "stabilityai/stablelm-zephyr-3b",
+   "snapshot": [
+    "fe1fd5e36ccb8cb2cb1dc225ab6d2962692b9837"
+   ]
+  },
+  "olmo-2-7b": {
+   "repo": "allenai/OLMo-2-1124-7B-Instruct",
+   "snapshot": [
+    "470b1fba1ae01581f270116362ee4aa1b97f4c84"
+   ]
+  },
+  "deepseek-llm-7b": {
+   "repo": "deepseek-ai/deepseek-llm-7b-chat",
+   "snapshot": [
+    "afbda8b347ec881666061fa67447046fc5164ec8"
+   ]
+  }
+ },
+ "file_sha256": {
+  "rebuttal/data/inference_suite.jsonl": "0f413d368ca1c095896f775c6c6b200bb744a6dcba116f7f4780aa739dd38869",
+  "rebuttal/data/knowledge_controls_suite.jsonl": "84e9a25d9697b8536d0a846decb646b4554bf8d793fc90c8a1259d79308ab185",
+  "rebuttal/data/boundary_v2_suite.jsonl": "ae89799e8b0f85474c15d673cd9d908489cb3e6602ce718a94a08aab9c8c6702",
+  "rebuttal/data/clinical_suite.jsonl": "e9f53e675e077d8e000d10d0eb1b22663538c8ab7d4a966602fcfd5ebc05f5b6",
+  "rebuttal/data/plan_suite.jsonl": "68a8b211d1e459a81f476d0d9d8e33587af25185f368bdbc7740dec76a9dbf76",
+  "rebuttal/real_data/real_suite.jsonl": "e0aab23b4eaaa74cd7f079451eb56a506a34f7f70a586e79eec3c6f0e4750a1f",
+  "rebuttal/real_data/real_cases.csv": "a5adf6375739aeaad470b77efa2ede590205a4943344a73f96214bd734c74649",
+  "data_final_v2/diagrare_x/ontology.csv": "dfd561116954dd2f9234b15a0e89953f7dc483d6e3ffab1f1468f697889d9b05",
+  "data_final_v2/diagrare_x/vignettes.csv": "8e0ae243fd9e963fb867be4b6aaa29c3d4703b8294061e3288bd63a5de10558e",
+  "rebuttal/data/full_profile_audit.csv": "142f092b6c3fabf2a577a803e222ae93e1655bbbcd7da6916d0c5ae5c8281da9",
+  "rebuttal/data/clinician_review_packet_blinded.csv": "8000ee194b413d04a14cebbd18a4163f862a5de0904029f525c986bdfe3ea7d4",
+  "rebuttal/clinical_sources/ddxplus/release_conditions.json": "56edf4682d8e86a4209fc3a33932e50ce03d1cc1fecc326c26d5ef8fa5c24890",
+  "rebuttal/clinical_sources/ddxplus/release_evidences.json": "281c78b044ae60514e28ecc9052d08a8225dd3e2db3f00f8788b99c47b05e0c0"
+ },
+ "seeds": {
+  "bootstrap": 2,
+  "permutation": "see scripts",
+  "suite_builders": "20261108-20261117"
+ }
+}
