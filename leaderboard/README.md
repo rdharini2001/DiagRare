@@ -6,7 +6,7 @@ colorTo: red
 sdk: static
 app_file: index.html
 pinned: true
-short_description: Do LLM diagnoses follow patient evidence or disease prevalence?
+short_description: Do LLM diagnoses follow evidence or prevalence?
 datasets:
 - Dharini24/DiagRare_Bench
 tags:
