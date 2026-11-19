@@ -1,6 +1,154 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>DiagRare-Bench</title><meta name="description" content="DiagRare-Bench separates disease priors from patient evidence in ranked diagnostic outputs."><style>
-:root{--bg:#f5f7f6;--paper:#fff;--ink:#14252b;--muted:#66747a;--line:#dce4e2;--green:#0f6657;--navy:#173f5f}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.56}a{color:var(--green);text-decoration:none}a:hover{text-decoration:underline}.wrap{max-width:1160px;margin:auto;padding:0 24px}nav{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}nav .wrap{height:64px;display:flex;align-items:center;justify-content:space-between}.brand{font-weight:850;color:var(--ink);letter-spacing:-.03em}.brand span{color:var(--green)}.links{display:flex;gap:19px;font-size:14px;flex-wrap:wrap}header{padding:82px 0 54px;background:linear-gradient(180deg,#fbfdfc 0%,#f5f7f6 100%)}.eyebrow{font-size:12px;text-transform:uppercase;letter-spacing:.13em;font-weight:800;color:var(--green)}h1{font-size:clamp(38px,6vw,68px);line-height:1.01;letter-spacing:-.052em;margin:12px 0 20px;max-width:1050px}.subtitle{font-size:20px;color:var(--muted);max-width:880px}.authors{margin-top:18px;font-size:15px}.buttons{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px}.btn{display:inline-block;border:1px solid var(--line);border-radius:9px;background:#fff;padding:10px 14px;font-weight:700;color:var(--ink)}.btn.primary{background:var(--green);color:#fff;border-color:var(--green)}.metrics{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:44px}.metric{background:#fff;border:1px solid var(--line);border-radius:14px;padding:17px}.metric b{font-size:27px;display:block;letter-spacing:-.04em}.metric span{font-size:13px;color:var(--muted)}section{padding:64px 0}h2{font-size:34px;letter-spacing:-.035em;margin:6px 0 14px}.lead{font-size:17px;color:var(--muted);max-width:820px}.steps,.results{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:26px}.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:21px}.card b{font-size:23px}.card p{color:var(--muted);margin:8px 0 0}.figs{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:30px}figure{margin:0;background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px}figure img{width:100%;display:block}figcaption{font-size:13px;color:var(--muted);padding:10px 5px 4px}.release{background:#132b35;color:#eef8f5}.release .lead{color:#bdd0cb}.release a{color:#bfe8dd}footer{padding:28px 0 44px;color:var(--muted);font-size:13px}@media(max-width:850px){.metrics{grid-template-columns:1fr 1fr}.steps,.results{grid-template-columns:1fr 1fr}.figs{grid-template-columns:1fr}.links{display:none}}@media(max-width:520px){.metrics,.steps,.results{grid-template-columns:1fr}}
-</style></head><body><nav><div class="wrap"><a class="brand" href="#top">Diag<span>Rare</span>-Bench</a><div class="links"><a href="#method">Method</a><a href="#results">Results</a><a href="leaderboard.html">Leaderboard</a><a href="#release">Release</a></div></div></nav><header id="top"><div class="wrap"><div class="eyebrow">Language models for clinical diagnosis</div><h1>Separating disease priors from patient evidence</h1><p class="subtitle">DiagRare-Bench measures how strongly a model's diagnostic ranking changes with patient evidence after a disease-prior feature is accounted for, then tests that measurement under independent changes to the evidence.</p><div class="authors"><b>Dharini Raghavan</b> · Georgia Institute of Technology &nbsp;&nbsp; <b>Amritpal Singh</b> · Emory University</div><div class="buttons"><a class="btn primary" href="https://openreview.net/forum?id=0Eua4EkYht">Paper</a><a class="btn" href="https://github.com/rdharini2001/DiagRare">Code</a><a class="btn" href="https://huggingface.co/datasets/Dharini24/DiagRare_Bench">Dataset</a><a class="btn" href="leaderboard.html">Leaderboard</a></div><div class="metrics"><div class="metric"><b>25</b><span>open-weight checkpoints</span></div><div class="metric"><b>984</b><span>diagnostic cases</span></div><div class="metric"><b>82</b><span>diseases</span></div><div class="metric"><b>26,463</b><span>external case reports</span></div><div class="metric"><b>0.860</b><span>r with sequential recovery</span></div></div></div></header>
-<section id="method"><div class="wrap"><div class="eyebrow">Method</div><h2>Measure the ranking, then change the evidence.</h2><p class="lead">A two-feature Plackett-Luce model separates a disease-prior feature from case-specific evidence in the model's ranked differential. The key test is whether the resulting evidence coefficient predicts behavior in experiments that were not used to fit it.</p><div class="steps"><div class="card"><b>01 · Estimate</b><p>Fit evidence responsiveness on 984 structured diagnostic cases.</p></div><div class="card"><b>02 · Transfer</b><p>Repeat the rank analysis on CUPCase and RareArena using a different evidence proxy.</p></div><div class="card"><b>03 · Randomize</b><p>Vary evidence strength and stated prevalence independently in a 3 × 3 experiment.</p></div><div class="card"><b>04 · Revise</b><p>Present evidence sequentially and measure recovery after an initial competing diagnosis.</p></div></div></div></section>
-<section id="results"><div class="wrap"><div class="eyebrow">Main results</div><h2>The fitted coefficient predicts independent evidence response.</h2><div class="results"><div class="card"><b>r = 0.843</b><p>Evidence responsiveness vs. primary top-1 accuracy.</p></div><div class="card"><b>r = 0.662 / 0.790</b><p>Transfer to CUPCase / RareArena.</p></div><div class="card"><b>r = 0.689</b><p>Baseline evidence responsiveness vs. randomized ΔE.</p></div><div class="card"><b>r = 0.860</b><p>Baseline evidence responsiveness vs. sequential recovery.</p></div></div><div class="figs"><figure><img src="assets/figures/fig1_accuracy.png" alt="Evidence responsiveness versus top-1 accuracy"><figcaption>Primary accuracy association across open-weight checkpoints.</figcaption></figure><figure><img src="assets/figures/fig2_randomized_validation.png" alt="Randomized validation"><figcaption>Cross-model validation under independently assigned evidence.</figcaption></figure><figure><img src="assets/figures/fig3_randomized_response.png" alt="Randomized evidence and stated prevalence"><figcaption>Response surfaces under the randomized 3 × 3 intervention.</figcaption></figure><figure><img src="assets/figures/fig4_sequential_revision.png" alt="Sequential diagnostic revision"><figcaption>Evidence responsiveness predicts revision after target-specific evidence arrives.</figcaption></figure></div></div></section>
-<section id="release" class="release"><div class="wrap"><div class="eyebrow">Open release</div><h2>Benchmark data, code, and model-level results.</h2><p class="lead">The public release contains the benchmark-owned data, analysis and inference code, machine-readable result tables, and an interactive model table. CUPCase and RareArena remain in their original repositories.</p><div class="buttons"><a class="btn" href="https://github.com/rdharini2001/DiagRare">GitHub repository</a><a class="btn" href="https://huggingface.co/datasets/Dharini24/DiagRare_Bench">Hugging Face dataset</a><a class="btn" href="leaderboard.html">Open leaderboard</a></div></div></section><footer><div class="wrap">DiagRare-Bench · 2026</div></footer></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DiagRare-Bench Leaderboard</title>
+<meta name="description" content="Leaderboard for DiagRare-Bench: how strongly language models' ranked diagnoses follow patient evidence after disease prevalence is accounted for.">
+<meta property="og:title" content="DiagRare-Bench Leaderboard">
+<meta property="og:description" content="Separating disease priors from patient evidence in language models for clinical diagnosis.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='12' cy='16' r='9' fill='%23eb6834' fill-opacity='.9'/%3E%3Ccircle cx='20' cy='16' r='9' fill='%232a78d6' fill-opacity='.85'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script>try{var t=localStorage.getItem('dr-theme');if(!t&&matchMedia('(prefers-color-scheme: dark)').matches)t='dark';if(new URLSearchParams(location.search).get('theme'))t=new URLSearchParams(location.search).get('theme');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head>
+<body>
+<header class="nav"><div class="wrap">
+  <a class="brand" href="#top" aria-label="DiagRare-Bench">
+    <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="12" cy="16" r="9" fill="#eb6834" fill-opacity=".92"/><circle cx="20" cy="16" r="9" fill="#2a78d6" fill-opacity=".88"/><path d="M16 8.8a9 9 0 0 1 0 14.4 9 9 0 0 1 0-14.4z" fill="#fff" fill-opacity=".28"/></svg>
+    DiagRare-Bench
+  </a>
+  <nav class="links">
+    <a class="keep" href="https://openreview.net/forum?id=0Eua4EkYht">Paper</a>
+    <a href="https://github.com/rdharini2001/DiagRare/blob/main/paper/DiagRare_Bench_Appendix_A_to_M.pdf">Appendix</a>
+    <a href="https://huggingface.co/datasets/Dharini24/DiagRare_Bench">Dataset</a>
+    <a class="keep" href="https://github.com/rdharini2001/DiagRare">Code</a>
+    <button class="icon-btn" id="theme" aria-label="Toggle theme" title="Toggle theme">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+    </button>
+  </nav>
+</div></header>
+
+<main id="top">
+<div class="hero"><div class="wrap">
+  <div>
+    <span class="eyebrow"><i></i> Leaderboard · ICLR 2027 submission</span>
+    <h1>Separating disease <span class="p">priors</span> from patient <span class="e">evidence</span></h1>
+    <p class="lede">Two models can reach the same accuracy and still rank diagnoses differently. DiagRare-Bench fits a Plackett–Luce model to each model's ranked differentials and reports how strongly the ranking follows case-specific findings once disease prevalence is held fixed.</p>
+    <div class="cta">
+      <a class="btn primary" href="#board"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>View leaderboard</a>
+      <a class="btn" href="https://openreview.net/forum?id=0Eua4EkYht"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 3h9l4 4v14H6zM14 3v5h5"/></svg>Paper</a>
+      <a class="btn" href="https://huggingface.co/datasets/Dharini24/DiagRare_Bench"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg>Dataset</a>
+      <a class="btn" href="https://github.com/rdharini2001/DiagRare"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M8 7 3 12l5 5M16 7l5 5-5 5"/></svg>Code</a>
+    </div>
+    <div class="authors">Dharini Raghavan · Amritpal Singh</div>
+  </div>
+  <div class="tug" aria-label="Illustration of the ranking model">
+    <div class="cap"><span>How a ranking is scored</span><span>Illustration</span></div>
+    <div class="formula"><b>U</b>(d, x) = <b class="p">γ<sub>prior</sub></b> · prior(d) + <b class="e">γ<sub>evidence</sub></b> · evidence(d, x)</div>
+    <div class="cand"><span class="nm">Common disease</span><div class="bar"><span class="pp" style="width:66%"></span><span class="ee" style="width:12%"></span></div><span class="sc">0.78</span></div>
+    <div class="cand"><span class="nm">Rare, matching</span><div class="bar"><span class="pp" style="width:10%"></span><span class="ee" style="width:64%"></span></div><span class="sc">0.74</span></div>
+    <div class="cand"><span class="nm">Rare, partial</span><div class="bar"><span class="pp" style="width:8%"></span><span class="ee" style="width:33%"></span></div><span class="sc">0.41</span></div>
+    <div class="legend-inline"><span><i style="background:var(--orange)"></i>Disease prior</span><span><i style="background:var(--blue)"></i>Patient evidence</span></div>
+  </div>
+</div></div>
+
+<div class="wrap">
+  <div class="kpis" id="kpis"></div>
+
+  <section id="board">
+    <div class="sec-h">
+      <div><h2>Leaderboard</h2><p>Checkpoints are ranked by <b>γ<sub>evidence</sub></b>, the evidence coefficient from the 984-case benchmark. A checkpoint is ranked only when its coefficient is identifiable, at least half of its outputs are usable, and top-1 accuracy is at least 5%. Nothing is imputed.</p></div>
+      <div class="tabs" role="tablist" id="tabs">
+        <button role="tab" aria-selected="true" data-tab="table">Leaderboard</button>
+        <button role="tab" aria-selected="false" data-tab="explore">Explore</button>
+        <button role="tab" aria-selected="false" data-tab="interv">Interventions</button>
+        <button role="tab" aria-selected="false" data-tab="transfer">Transfer</button>
+        <button role="tab" aria-selected="false" data-tab="context">Referral context</button>
+        <button role="tab" aria-selected="false" data-tab="about">About</button>
+      </div>
+    </div>
+
+    <div class="panel on" id="p-table">
+      <div class="card">
+        <div class="controls">
+          <div class="search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg><input id="q" type="search" placeholder="Search models" aria-label="Search models"></div>
+          <div class="seg" id="scope"><button data-v="core" aria-pressed="true">Ranked</button><button data-v="all" aria-pressed="false">All checkpoints</button><button data-v="orig" aria-pressed="false">Original 25</button></div>
+          <span class="chip" id="f-gen" aria-pressed="true"><i style="background:var(--blue)"></i>General</span>
+          <span class="chip" id="f-med" aria-pressed="true"><i style="background:var(--orange)"></i>Medical</span>
+          <span class="spacer"></span><span class="count" id="count"></span>
+          <a class="btn" style="padding:7px 12px;box-shadow:none" href="leaderboard.csv" download>Download CSV</a>
+        </div>
+        <div class="tbl-wrap"><table class="lb" id="lb"></table></div>
+      </div>
+    </div>
+
+    <div class="panel" id="p-explore">
+      <div class="card chart-card">
+        <div class="chart-h"><h3>Compare any two measures</h3>
+          <label>x <select class="sel" id="xs"></select></label><label>y <select class="sel" id="ys"></select></label>
+          <label class="chip" style="cursor:pointer"><input type="checkbox" id="showall" style="accent-color:var(--blue)"> Show unranked</label>
+          <span class="stat" id="xstat"></span></div>
+        <div class="legend"><span><i style="background:var(--blue)"></i>General</span><span><i style="background:var(--orange)"></i>Medical</span><span><i class="hol"></i>Not ranked</span></div>
+        <div id="xchart"></div>
+      </div>
+    </div>
+
+    <div class="panel" id="p-interv">
+      <div class="grid2">
+        <div class="card chart-card"><div class="chart-h"><h3>Response to a stronger evidence contrast</h3><span class="stat" id="s-dE"></span></div><div class="cap-note">Randomized 3×3 experiment: change in the share of answers choosing the evidence-supported disease (ΔE) when evidence is strengthened and the stated prevalence is held fixed.</div><div id="c-dE"></div></div>
+        <div class="card chart-card"><div class="chart-h"><h3>Recovery after supporting findings</h3><span class="stat" id="s-rec"></span></div><div class="cap-note">Sequential task: share of initially anchored cases revised to the target disease after target-specific findings arrive.</div><div id="c-rec"></div></div>
+      </div>
+      <div class="legend" style="margin-top:14px"><span><i style="background:var(--blue)"></i>General</span><span><i style="background:var(--orange)"></i>Medical</span><span><i class="hol"></i>Not ranked</span><span style="color:var(--muted)">Whiskers show 95% intervals. Original 25-checkpoint panel only.</span></div>
+    </div>
+
+    <div class="panel" id="p-transfer">
+      <div class="grid2">
+        <div class="card chart-card"><div class="chart-h"><h3>CUPCase</h3><span class="stat" id="s-cup"></span></div><div class="cap-note">3,562 published case reports. Evidence is scored by text similarity between the case and each candidate diagnosis, so the scale differs from the main benchmark; only the ordering is compared.</div><div id="c-cup"></div></div>
+        <div class="card chart-card"><div class="chart-h"><h3>RareArena</h3><span class="stat" id="s-rare"></span></div><div class="cap-note">22,901 rare-disease cases scored the same way.</div><div id="c-rare"></div></div>
+      </div>
+    </div>
+
+    <div class="panel" id="p-context">
+      <div class="card ctx">
+        <div class="chart-h" style="padding-top:14px"><h3>Primary-care versus rare-disease referral prompt</h3><span class="badge-x">Exploratory</span></div>
+        <div class="cap-note">Same 984 cases and candidates; only the stated clinical setting changes. Six models with enough usable outputs under both prompts; intervals resample the 82 diseases. The referral prompt also tells the model that common diagnoses were ruled out, so the change is not a pure prevalence manipulation.</div>
+        <div class="legend"><span><i style="background:var(--muted)"></i>Primary care</span><span><i style="background:var(--orange)"></i>Rare-disease clinic</span></div>
+        <div class="tbl-wrap"><table id="ctxt"></table></div>
+      </div>
+    </div>
+
+    <div class="panel" id="p-about">
+      <div class="about">
+        <div class="card"><h3>How to read it</h3>
+          <p><b>γ<sub>evidence</sub></b> is the coefficient on case-specific evidence in a two-feature Plackett–Luce model fitted to a model's ranked differential, with disease prevalence as the second feature. Larger values mean that stronger findings move a diagnosis up the ranking more, at fixed prevalence.</p>
+          <p><b>γ<sub>prior</sub></b> is the matching coefficient on prevalence. It is descriptive and can be negative.</p>
+          <p>The coefficient depends on the evidence scale, prompt, candidate set and decoding rule. It is reported next to accuracy, and it is not a clinical safety score.</p></div>
+        <div class="card"><h3>Who is ranked</h3>
+          <div class="tier"><b>Ranked</b><span>identifiable coefficient, ≥ 50% usable outputs, top-1 ≥ 5%</span><b>Reported</b><span>identifiable but too few usable outputs or near-zero accuracy; shown, never ranked</span><b>Not estimated</b><span>the fit could not identify the coefficient</span><b>New</b><span>checkpoint added during review under the same baseline protocol; no intervention data yet</span></div>
+          <p style="margin-top:12px">Medical checkpoints and general checkpoints are scored by the same code. Randomized, sequential and transfer columns are present only for the original 25 checkpoints.</p></div>
+        <div class="card"><h3>Add a checkpoint</h3>
+          <p>Run the 984-case baseline protocol, fit the model with <span class="mono">code/analysis/fit_per_all_models.py</span>, then open a GitHub issue with the ranked outputs and the checkpoint link. Entries are added after the fit is reproduced from the files you provide.</p>
+          <p><a href="https://github.com/rdharini2001/DiagRare/issues">Open an issue</a> · <a href="https://github.com/rdharini2001/DiagRare/tree/main/code">Scoring code</a></p></div>
+      </div>
+      <div class="card" style="padding:22px;margin-top:18px"><h3 style="margin:0">Cite</h3>
+<pre class="code" id="bib"><button id="copy">Copy</button>@misc{raghavan2026diagrarebench,
+  title  = {{DiagRare-Bench: Separating Disease Priors from Patient Evidence in Language Models for Clinical Diagnosis}},
+  author = {Raghavan, Dharini and Singh, Amritpal},
+  year   = {2026},
+  note   = {ICLR 2027 Conference Submission},
+  url    = {https://openreview.net/forum?id=0Eua4EkYht}
+}</pre></div>
+    </div>
+  </section>
+</div>
+</main>
+
+<footer><div class="wrap"><span>DiagRare-Bench is a research benchmark for diagnostic model behaviour. It does not assess clinical safety or fitness for patient care. Code and benchmark-owned data: Apache-2.0.</span><span><a href="https://github.com/rdharini2001/DiagRare">GitHub</a> · <a href="https://huggingface.co/datasets/Dharini24/DiagRare_Bench">Hugging Face</a></span></div></footer>
+
+<aside class="drawer" id="drawer" aria-hidden="true"></aside><div class="drawer-bg" id="dbg"></div><div class="tip" id="tip"></div>
+<script src="results.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
