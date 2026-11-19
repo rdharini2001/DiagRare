@@ -2,6 +2,7 @@
 (function () {
   'use strict';
   var D = window.DIAGRARE, M = D.models, S = D.meta.stats;
+  document.querySelectorAll('a[href^="http"]').forEach(function (l) { l.target = '_blank'; l.rel = 'noopener'; });
   var $ = function (s, r) { return (r || document).querySelector(s); };
   var NS = 'http://www.w3.org/2000/svg';
   var f3 = function (v) { return v == null ? '–' : (v < 0 ? '−' : '') + Math.abs(v).toFixed(3); };
