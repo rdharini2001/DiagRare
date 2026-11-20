@@ -3,7 +3,7 @@
 <p align="center">
   <a href="https://huggingface.co/spaces/Dharini24/DiagRare-Leaderboard"><img alt="Leaderboard" src="https://img.shields.io/badge/Leaderboard-Hugging%20Face%20Space-ffb000?style=for-the-badge&logo=huggingface&logoColor=white"></a>
   <a href="https://huggingface.co/datasets/Dharini24/DiagRare_Bench"><img alt="Dataset" src="https://img.shields.io/badge/Dataset-Hugging%20Face-2a78d6?style=for-the-badge&logo=huggingface&logoColor=white"></a>
-  <a href="https://openreview.net/forum?id=0Eua4EkYht"><img alt="Paper on OpenReview" src="https://img.shields.io/badge/Paper-OpenReview-8c1b13?style=for-the-badge"></a>
+  <img alt="Paper on OpenReview" src="https://img.shields.io/badge/Paper-OpenReview-8c1b13?style=for-the-badge">
 </p>
 
 <p align="center">
@@ -67,7 +67,7 @@ The coefficient is strongly associated with accuracy, and the independent behavi
 
 ### Analyses added during review
 
-All additions use open-weight models and are documented in [Appendix M](paper/DiagRare_Bench_Appendix_A_to_M.pdf); tables are in [`rebuttal/results/`](rebuttal/results).
+All additions use open-weight models and are documented in Appendix M; tables are in [`rebuttal/results/`](rebuttal/results).
 
 - **Larger checkpoints.** Seven checkpoints from 14B to 72B run under the same baseline protocol; γ_evidence and accuracy remain strongly associated across the 22 ranked checkpoints.
 - **Orphanet-grounded differential.** 599 vignettes with 10 phenotypically similar candidates built from curated frequencies; for the nine usable models γ_evidence tracks accuracy (ρ = 0.92) and agrees with the 82-disease coefficient (ρ = 0.88). The vignettes share their frequency source with the evidence feature, so this is a transfer check and not independent validation.
@@ -144,7 +144,6 @@ CUPCase and RareArena are external datasets and are not redistributed; obtain th
   title  = {{DiagRare-Bench: Separating Disease Priors from Patient Evidence in Language Models for Clinical Diagnosis}},
   author = {Raghavan, Dharini and Singh, Amritpal},
   year   = {2026},
-  note   = {ICLR 2027 Conference Submission},
-  url    = {https://openreview.net/forum?id=0Eua4EkYht}
+  note   = {ICLR 2027 Conference Submission}
 }
 ```

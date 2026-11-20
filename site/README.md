@@ -28,7 +28,7 @@ tags:
 
 Interactive leaderboard for **DiagRare-Bench**, a benchmark of how strongly language models' ranked differential diagnoses follow patient evidence once disease prevalence is held fixed. It reports 32 open-weight checkpoints (0.5B to 72B) on 984 structured cases covering 82 diseases and nine organ systems.
 
-**[Paper](https://openreview.net/forum?id=0Eua4EkYht) · [Dataset](https://huggingface.co/datasets/Dharini24/DiagRare_Bench) · [Code](https://github.com/rdharini2001/DiagRare)**
+**Paper · [Dataset](https://huggingface.co/datasets/Dharini24/DiagRare_Bench) · [Code](https://github.com/rdharini2001/DiagRare)**
 
 The page is self-contained: sorting, filtering, the comparison explorer, intervention and transfer plots, and the referral-context view all run in the browser. No backend or token is needed.
 

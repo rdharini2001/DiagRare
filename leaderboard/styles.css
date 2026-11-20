@@ -147,3 +147,6 @@ footer { margin-top: 60px; border-top: 1px solid var(--line); padding: 30px 0 50
   .nav .links a:not(.keep) { display: none; } .lb th { top: 0; }
 }
 @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+/* placeholders for links that are not published yet */
+a:not([href]) { cursor: default; } a:not([href]):hover { text-decoration: none; }
+.btn:not([href]):hover { transform: none; border-color: var(--line2); } .nav .links a:not([href]):hover { background: transparent; color: var(--ink2); }

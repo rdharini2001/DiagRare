@@ -2,7 +2,7 @@
   <img src="document/figures/fig3_randomized_response.png" alt="DiagRare-Bench randomized evidence and stated-prior experiment" width="100%">
 </p>
 
-<a href="https://openreview.net/forum?id=0Eua4EkYht"><img src="https://img.shields.io/badge/Paper-OpenReview-8A2BE2"></a>
+<img src="https://img.shields.io/badge/Paper-OpenReview-8A2BE2">
 <a href="https://huggingface.co/datasets/Dharini24/DiagRare_Bench"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Dataset-yellow"></a>
 <a href="https://diagrare-bench-dhariniraghavan2001-2901.vercel.app"><img src="https://img.shields.io/badge/Project-Page-0E7C6B"></a>
 <a href="https://diagrare-bench-dhariniraghavan2001-2901.vercel.app/leaderboard.html"><img src="https://img.shields.io/badge/Interactive-Leaderboard-2C6CB0"></a>
@@ -21,7 +21,7 @@ The benchmark separates a disease-prior feature from a case-specific evidence fe
 **DiagRare-Bench: Separating Disease Priors from Patient Evidence in Language Models for Clinical Diagnosis**  
 Dharini Raghavan, Amritpal Singh  
 *ICLR 2027 Conference Submission*  
-<a href="https://openreview.net/forum?id=0Eua4EkYht"><img src="https://img.shields.io/badge/Paper-OpenReview-purple"></a>
+<img src="https://img.shields.io/badge/Paper-OpenReview-purple">
 <a href="document/DiagRare_Bench_ICLR2027.pdf"><img src="https://img.shields.io/badge/PDF-Repository-orange"></a>
 
 # Benchmark Components
@@ -109,7 +109,6 @@ DiagRare-Bench is intended for research on language-model behavior in clinical d
   title  = {{DiagRare-Bench: Separating Disease Priors from Patient Evidence in Language Models for Clinical Diagnosis}},
   author = {Raghavan, Dharini and Singh, Amritpal},
   year   = {2026},
-  note   = {ICLR 2027 Conference Submission},
-  url    = {https://openreview.net/forum?id=0Eua4EkYht}
+  note   = {ICLR 2027 Conference Submission}
 }
 ```

@@ -14,6 +14,5 @@ Then open `http://localhost:8000`.
 
 The directory is deploy-ready as a static Vercel project. `vercel.json` enables clean URLs. The canonical links used by the page are:
 
-- Paper: https://openreview.net/forum?id=0Eua4EkYht
 - GitHub: https://github.com/rdharini2001/DiagRare
 - Dataset: https://huggingface.co/datasets/Dharini24/DiagRare_Bench
