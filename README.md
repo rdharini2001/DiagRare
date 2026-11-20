@@ -22,7 +22,7 @@
 
 DiagRare-Bench measures how strongly a language model's ranked differential diagnosis follows case-specific patient evidence after a disease-prevalence feature is accounted for. Two models can reach the same accuracy and still weigh prevalence and findings differently, or respond differently when new findings arrive. A two-feature Plackett–Luce model is fitted to the ranked outputs, so the method needs no logits, hidden states or reasoning traces.
 
-This repository is the code, data and results behind the paper by Dharini Raghavan and Amritpal Singh. The [interactive leaderboard](https://huggingface.co/spaces/Dharini24/DiagRare-Leaderboard) lets you sort, filter and compare every checkpoint.
+The [interactive leaderboard](https://huggingface.co/spaces/Dharini24/DiagRare-Leaderboard) lets you sort, filter and compare every checkpoint.
 
 <p align="center">
   <a href="https://huggingface.co/spaces/Dharini24/DiagRare-Leaderboard"><img src="assets/leaderboard.png" width="92%" alt="Screenshot of the DiagRare-Bench leaderboard"></a>
