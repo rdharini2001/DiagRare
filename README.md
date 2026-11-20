@@ -7,7 +7,6 @@
 </p>
 
 <p align="center">
-  <img alt="ICLR 2027 submission" src="https://img.shields.io/badge/ICLR%202027-submission-6250d6?style=flat-square">
   <img alt="python" src="https://img.shields.io/badge/python-3.9%2B-3776ab?style=flat-square&logo=python&logoColor=white">
   <img alt="license" src="https://img.shields.io/badge/code%20%26%20data-Apache--2.0-475069?style=flat-square">
   <img alt="checkpoints" src="https://img.shields.io/badge/checkpoints-32-2a78d6?style=flat-square">
