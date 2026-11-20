@@ -83,9 +83,6 @@ All additions use open-weight models and are documented in Appendix M; tables ar
 <p align="center">
   <img src="figures/paper_fig02_independent_validation.png" width="82%" alt="Independent validation across protocols">
 </p>
-<p align="center">
-  <img src="figures/paper_fig04_sequential_revision.png" width="82%" alt="Sequential diagnostic revision">
-</p>
 
 The `figures/` folder holds all thirteen paper figures as SVG and PNG.
 
