@@ -144,6 +144,6 @@ CUPCase and RareArena are external datasets and are not redistributed; obtain th
   title  = {{DiagRare-Bench: Separating Disease Priors from Patient Evidence in Language Models for Clinical Diagnosis}},
   author = {Raghavan, Dharini and Singh, Amritpal},
   year   = {2026},
-  note   = {ICLR 2027 Conference Submission}
+  note   = {Under Review}
 }
 ```
